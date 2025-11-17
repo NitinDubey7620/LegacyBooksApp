@@ -1,0 +1,11 @@
+for backend we are using mongo db for no sql database ,  expresss js , js framework - for creating serverside
+application and apis , 
+node js -> with help of which we can run js on server side
+/we are using js in backend with the help of javascript
+
+// go on terdminal 
+-> cd backend , enter backend folder 
+// cls , to clear prevoius cmd history
+// npm init , initialize node apllication at backend directory
+// will create a pkg.json ofr backend , where all info , and dependcies about are project will be there
+// we have intilazed a nodes js apllication in backend -> package.json -> all info abot project is here

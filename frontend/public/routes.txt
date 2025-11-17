@@ -1,0 +1,309 @@
+rcfe->react componenet shortcut for snippet
+once we have created the nav , banner , footer , freebok(for free courses filter from list.json using javascript method ) and map the tailwind css cards with
+the freebook to dislplay only free cards -> our home page is almost ready ./ 
+-> now we need to move to courses page but before this we need to decide route for each page , like homwpage -
+localhost:5173 -> home page, for course page -> localhost:5173./courses and similarly for the other pages 
+like aboutus ->localhost:/aboutus
+-> so for each page we need to decide the route 
+// for that we will create component course.jsx in our componnet
+// after this it will not show as we haven't bind it in our app.jsx
+-> as we know that we are in home page so we will 
+/*
+import React from 'react';
+import Navbar from './components/Navbar';
+import Banner from './components/Banner';
+import Footer from './components/footer';
+import Freebook from './components/Freebook';
+
+function App() {
+  //for tailwind css we use classname , atrribute
+  return (
+  //   <div>App
+  //     <h1 class="text-3xl font-bold underline"> 
+  //       {/* to check whether our tailwind css is working or not */}
+  //   Hello world!
+  // </h1>
+  //   </div>
+  <>
+  <Navbar></Navbar>
+  <Banner></Banner>
+  <Freebook></Freebook>
+  <Footer></Footer>
+  </>
+  )
+}
+*/
+-> all this is part of home page -> ./ 
+//we will create a folder in src -> homepage -> under it componenet as Home.jsx
+// now bring all the above comoponent here in home.jsx like -> 
+/*<>
+  <Navbar></Navbar>
+  <Banner></Banner>
+  <Freebook></Freebook>
+  <Footer></Footer>
+  </>
+  */
+  ->also there imports
+  ->now we as bydefault have homepage -> ./
+  ->for other page we need to route it using -> [ npm i react-router-dom]
+  // u check it in the package.json in dependices once it gets installed
+  ->"react-router-dom": "^7.9.5",
+  // we can also react-slick and react carousel as we have installed
+  /*
+
+  //as we have route all the pages so import the route after installing it
+import { Routes , Route} from "react-router-dom"
+
+  // now we will route and will have our route
+  // we route  path="/" ->path -> the page we want to render we want to render home compnent so write it
+  // component -> in our element={</home>} -> we want ./ to be rendered as home component like 
+  //http://localhost:5173/ -> ./ ->home page 
+  //localhost:5173/course -> /courses -> course page 
+
+  <>
+  <Routes>
+    <Route path="/" element={<Home></Home>}/>
+    <Route path="/course" element={<Course></Course>}/>
+  </Routes>
+  */
+
+// if after routing the compoent if doesn't shows 
+//if this doesn't gets run that -> we need to remove strict mode from main.jsx 
+// beacuse due to strict mode in jsx it render two times so just remove it
+
+// in main page after removing srtrict 
+/*
+<React.StrictMode>
+</app>
+</React.StrictMode>
+
+// we will use browser route 
+//in main.jsx to render our root element -> app.jsx
+
+  ->as building app we build all this pages and added directly to our app , but as far we know bydeafult 
+  we are in our homepage and we have component of our app.jsx like courses,aboutus,contact -> so we have to add 
+  these all to our main app.jsx so all these nav, banner,freecourse, footer is is our home page and 
+  we want to display now each page from home to contact us as a separate page and also route them, so when we click
+  on to those page present on our home page as well as other pages too on our app.jsx on click then they take us to 
+  exact courses page 
+  now as we have separate home component -> home.jsx
+
+  // we also need to bind the navbar items to our main jsx where we have route this all 
+  // when its clicked over here like on course u will be redirected to the course page from the navbar
+  //<li><a>Home</a></li> -> <li><a href="./">Home</a></li> for all pages
+  // <li><a href='./'>Home</a></li> -> these route  home page 
+  // <li><a href='./course'>Course</a></li> // these route has course, course.jsx in app.jsx and we are running this app.jsx in main.jsx as </app> component in the 
+  // webrowser when we click it we will be redirected to the course
+  // if we go to diff pages that means are component is rendering on route
+
+  // now we want navbar and footer also in our course section 
+  //so we will create a foler -> courses-> file name under it courses.jsx
+  //add these ther
+  /*<Navbar></Navbar>
+    <Course></Course>
+    <Footer></Footer>*/
+  // this will display for courses page
+  // on the main jsx just route the ./course path to </courses>
+
+after that we will get ready our courses page , where we have ttile, para and button after that we have to 
+render the books .. as we have course.jsx which we are using int the courses.jsx main course section as after 
+nav
+course
+footer
+/ we alredy have list.json all book so how we want it to be in course so we can render it in the courses.jsx 
+create a main div in course and we will map data over there 
+// we already have card component so we will use it 
+import list from "../../public/list.json"
+use this and map fucntion to map the cards
+<div>
+        {
+         list.map((item)=>
+        <Cards key={item.id} item={item}></Cards>)
+        }
+      </div>
+// now it showing one below one so to show it properly we would use css class
+// we can use flex , but we will use grid like for small device only 1 cards column 1 anzd for device above md - 4 cards
+
+// now we will look after the hover that scale , on point mouse on it , it get popped or get bit in size
+// these need to be done into main cards.jsx which we have mapped with our list.json using it and rendering it 
+<div className="card bg-base-100 w-120 shadow-lg rounded-lg hover:scale-105 duration-200">
+->hover:scale-105 duration-200
+
+// now as we know that our bacl button is not working so we will use react link 
+import {link} from 'react-router-dom'
+// place between the link and we will route to our home page back 
+// as we know in our app.jsx ./ is rendered as -><Route path="/" element={<Home></Home>}/>
+<Link to="/">
+<button className='bg-indigo-500 items-enter text-white px-4 py-2 rounded-md hover:bg-indigo-700 duration-300 mt-6'>Back</button>
+</Link>
+// now as we click so we will be redirected to our home 
+
+// know we will create dark and light functionality 
+// the button is in our navbar
+// we will use theme variable in our navbar 
+const[theme,SetTheme]
+// theme is variable 
+//settheme is a fucntion -> we will keep our changes affect then we will store the value of settheme func into theme var
+// we will use usestate where bydefault value will be 
+// localstorage of browser , if there is this theme is localstorage so return this as it 
+  const[theme,SetTheme]=useState(localStorage.getItem("theme"))?localStorage.getItem("theme"):"light")
+  //i.e esle return light
+  // just go onto inspect and scroll and go to the application and clcik on the host and on the that website 
+  // click on the theme button it will change u can see it , on clicking
+  // key    value
+  // theme   dark
+  // theme   light
+// so we will update vlaue on our website so the value od theme gets updated on click
+// so we will target browser root element
+//const element=document.documentElement;
+  // now we have element in our variable ,now we will show affect on click
+  we will use [theme]->empty depedencies so it will show only one time not again and again and run on our click
+  const[theme,SetTheme]=useState(localStorage.getItem("theme")?localStorage.getItem("theme"):"light")
+  const element=document.documentElement;
+  useEffect(()=>{
+    if(theme==='dark'){
+      element.classList.add("dark");
+      localStorage.setItem("theme","dark");
+      document.body.classList.add("dark");
+    }
+    else{
+      element.classList.remove("dark");
+      localStorage.setItem("theme","light");
+      document.body.classList.remove("dark");
+    }
+  },[])
+  if theme = dark , so in our element classlist add dark, and set local storage theme dark ,
+  so on click on button if theme =dark , so add that to our element and also set it the local storage =dark 
+  //document.body.classList.add("dark"); set our boy to dark
+  so our website will also become dark
+  else part is jsut reverse of these , we will remove dark so bydefault it is light so all , remove from  classlist of element,
+  //so also remove from body
+  // now we will add the theme to our  theme button in the sun icon part , to change state using hook as we have store the settheme in theme
+  //Onclick={()=>SetTheme(theme==='dark'?"light":"dark")}
+  / where on click if theme is dark set to light else keep it dark
+  // now we will add the theme to our  theme button in the moon icon part , to change state using hook as we have store the settheme in theme
+  //Onclick={()=>SetTheme(theme==='light'?"dark":"light")}
+  / where on click if theme is light set to dark else keep it light
+// after this we need to configure it in the tailwind.config.js
+// so to bring ligh/dark theme into effect
+//  darkMode:"class", -> our selector would be class as we are using in the class
+// in app.jsx ,  <div className='dark:bg-slate-900 dark:text-white'>
+ <Routes>
+    <Route path="/" element={<Home></Home>}/>
+    <Route path="/course" element={<Courses></Courses>}/>
+  </Routes>
+  </div>
+// to make changes in the the div of every page to show the dark mode effect so it work evenly so alog with them
+// light theme also include 
+// dark:bg-slate-900 dark-text-white
+// this will reflect only after enabling the dark mode 
+// on light mode u will see normally the girl bydefault 
+
+// now we will work on login and registers as there is login in home page and when login opens there register a seperate pg for registration
+// so when u go onto course u need login -> but as u are first time on the login so u need to register on the page
+// create -> component folder -> login.jsx for login
+inside login use component from daisy ui -> modal ->Dialog modal with a close button at corner
+    // this daisy ui modal on click it gets open
+// this daisy ui modal on click it gets open
+    // we will us id="my_modal_3 in our navbar ( beacuse login button is on navbar)
+    // on click in navbar it will open login button nad will use showmodal() function to show that modal 
+    // use <Login></Login> to import it so we can use login in our navbar
+    // now on click -> we will get message like -> Press ESC key or click on ✕ button to close
+    // we will further start developing login form and also adding register form along with it 
+    / we want email , pass , login button , notresgistered , signup bt
+/ we have built these all in div using form and have given css using classname accordingly
+    // as we have built the login form now we habe signup on clicking which the route changes so make signup.jsx
+    // as login is on same page so we don't define route but for signup as the page changes we have too define the route
+    // so it will get open on new page we need to connnect with signup with signup.jsx so we will route in our app.jsx
+    //    <Route path='/signup' element={<Signup></Signup>}
+// for route we need link so we will signup in link section
+</div>
+    <div className='flex justify-around mt-6 ml-6' >
+        <button className='text-white bg-indigo-600 border rounded-md px-3 py-1 hover:bg-indigo-700 duration-200 '>Login</button>
+       <Link to="/Signup" className='mx-20 justify-center'> Not Registered{"?"}<span className='underline text-blue-500 cursor-pointer'>Signup</span>
+      </Link>
+    </div>
+//will be routed to signup jsx using link after routing it 
+//now on clicking login bt on navbar it will open the login from and there we can click
+// on the signup it will take us to the signup where we have signup.jsx page 
+//http://localhost:5173/Signup
+
+
+// fo r building signup page 
+//// we will use same modal use in login in signuo to save our time 
+  // we will remove dailog as in this page we don't want to open anything 
+  // change it to div , because we want atleast the id , for routing so we can target this 
+  // where in navbar we have used this to target the this modal and fucntion to show this 
+  // but for now for signup we will use it for the route
+  // in signup we need bit changes we don't need anything related to modal so remove it 
+  // give css accordigly here now registered \?signup-> becomeshave account ?login 
+  // here we have redirected user from signup to login in case if he has a account 
+  //we will add x -> back option to go back which not in signup form
+  // now we use modal box as we find out that to bring these cross-> back to home functionality
+  //as modal -> dailog box already has all css essentials design structures
+  // in main div after the react fragment div we will remove modal from there as we don't 
+  //have requirement of opeing it there as modal box like insignup 
+  //like -> <div className='flex h-screen items-center justify-center '>
+    <div className='w-600px'>
+  <div className="modal-box">
+    <form method="dailog">
+  // and also using react route dom we will redirect the with link to home page as for cross
+    //and now we will route our login page i f u have account in singup page 
+// we will use onclick in link in the login  that is underline in singup to redirect to the login page
+// connect all the cross button on each page signup, navabar and also login , so they could be redirected 
+// vice versa , and also all the cross has to be working , with the help of link route it to onclick 
+// redirect to home page 
+
+// front end work is done 
+
+//now backend related part so , now we want like we enter vlaue in our login or signup should be stored
+// in the database -> we work on this 
+// -> login page
+// when we fill it in case it is empty there should be a validation that says this field is empty -> error
+// and without filling it should be submitted to when clicked on to the login 
+
+// for this we will use react hook form 
+// got on to the wesbite ->react hook form  , and get started 
+//Performant, flexible and extensible forms with easy-to-use validation.
+// in cmd ->npm install react-hook-form
+// in pkg.json ->    "react-hook-form": "^7.66.0",
+// after that imoprt  , login .jsx 
+//->import { useForm, SubmitHandler } from "react-hook-form"
+// in form  <form method="dialog">, in login.jsx add ->
+// <form  onSubmit={handleSubmit(onSubmit)} method="dialog"
+// we need to define the function handle submit 
+
+/ we will copy the below variable from the react hook from website from the jsx code 
+const {
+    register,
+    handleSubmit,
+    // watch, -> we don't need this 
+    formState: { errors }, // to show error 
+  } = useForm<Inputs>();
+
+  // paste before return and under the react function()
+  //in input field we need this  < input type="email> </input>
+  //{...register("exampleRequired", { required: true })}
+  // 1.first field is email 
+  //{...register("email", { required: true })}
+  //-> email -> will be true , so email is needed without it will throw error 
+  //2. for password , same for {...register("password", { required: true })}
+  // so -> pass will be true , for validation 
+// {errors.password && <span className='text-sm text-red-500'>This field is required</span>}
+// this make sure u don't leave anyfield will give u a warning and login button won't be submitted
+//
+//now we will do same thing for register.jsx as it is 
+// if u just submitted without filling for all the field or any field it will give error , This field Required 
+// message in red color and medium text set by us in css
+
+// after submitting the data in login or signup form u can inspect website and check the console.log 
+// u can see the value as we submit
+/*
+ Form Submitted: {email: 'tangentgamer07@gmail.com', password: 'xvxvxd'}
+email
+:"tangentgamer07@gmail.com"
+password
+: "xvxvxd"
+[[Prototype]]: xsaObject
+*/
+// we can use mongo db for this but we have libraries in react

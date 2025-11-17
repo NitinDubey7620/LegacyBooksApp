@@ -1,0 +1,98 @@
+[
+    {
+        "id":1,
+        "name":"Story Book",
+        "title":"Discover a smarter way to learn — anytime, anywhere.",
+        "price": 0,
+        "category":"900",
+        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "id":2,
+        "name":"Life",
+        "title":"The Legacy Within — Your Journey Begins Here",
+        "price": 0,
+        "category":"Free",
+        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "id":3,
+        "name":"Mind Peace",
+        "title":"Stories That Shape Souls and Build Legacies",
+        "price": 0,
+        "category":"500",
+        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "id":4,
+        "name":"Friendship",
+        "title":"From Pages to Purpose — Discover, Learn, and Evolve.",
+        "price": 0,
+        "category":"700",
+        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "id":5,
+        "name":"World",
+        "title":"A World of Books, A Lifetime of Legacy.",
+        "price": 0,
+        "category":"Free",
+        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "id":6,
+        "name":"Story Book",
+        "title":"Dream. Read. Discover — The LegacyBooks Way",
+        "price": 0,
+        "category":"800",
+        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "id":7,
+        "name":"Story Book",
+        "title":"Beyond Words — Creating Legacies Through Knowledge",
+        "price": 0,
+        "category":"900",
+        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "id":8,
+        "name":"Universe Story",
+        "title":"Every Book Holds a Universe — Find Yours.",
+        "price": 0,
+        "category":"Free",
+        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "id":9,
+        "name":"ShortStory",
+        "title":"Timeless Tales, Endless Learning.",
+        "price": 0,
+        "category":"Free",
+        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "id":10,
+        "name":"novels",
+        "title":"LegacyBooks — Where Great Stories Never End",
+        "price": 0,
+        "category":"200",
+        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "id":11,
+        "name":"novels",
+        "title":"Great Stories Never End",
+        "price": 0,
+        "category":"790",
+        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "id":12,
+        "name":"AutoBiography",
+        "title":"Great Stories ",
+        "price": 500,
+        "category":"history",
+        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    }
+]
