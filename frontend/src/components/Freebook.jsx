@@ -1,9 +1,15 @@
 import React from 'react'
-import list from "../../public/list.json"
+// import list from "../../public/list.json" //as were getting data from backend
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Cards from './Cards';
+// we have also in freebook -> where we were filtering and showing free book  using frontend list.json now we will do from backend
+// now we have to do from backend using  axois in src->component->Freebook.jsx 
+import axios from 'axios';
+import { useState, useEffect } from "react";
+import { data } from 'react-router-dom';
+//we will use the same fucntion used in course just bit make adjustment for the filter data 
 {/*as this is freebook will be dipalayed on the home page and all the paid book will be dispalyed on the courses where we have to login
     without authentication we can't use it 
     and we need to dispaly the data, in public list.json 
@@ -25,9 +31,31 @@ we filter list and pass local data  , filter fucntion is a array method works or
 that is the conditon we have given and return that data to us 
 we need card to display this data */}
 function Freebook() {
+const [book,setBook]=useState([])
+    useEffect(()=>{
+      const getBook = async()=>{
+        try {
+          // we will call our api 
+          const res = await axios.get("http://localhost:4001/book");
+          const data=res.data.filter((data)=>data.category==="Free")
+          console.log(data);
+          setBook(data); // it will come from setbook to our variable -> book and we can use the variable 
+          //im our mapping 
+        } catch (error) {
+          //if there is error we throe the error in the console
+          console.log(error);
+        }// our api call is ready so noww we will call our function here 
+      }
+      getBook(); // calling our function here
+    },[]);
+
+
+/*
     const filterdata =list.filter((data)=>data.category==="Free")// this will keep the free data we are checking both varible and type 
     // u can check data by consoling it 
-    console.log(filterdata); // we get filter data now we need to shos this data near homepage in a card
+    console.log(filterdata); 
+    */
+    // we get filter data now we need to shos this data near homepage in a card
     // react slick slider -> go doc and install this npm install react-slick 
     // to include css with it , npm install slick-carousel --save
     // for card refer daisy ui
@@ -54,7 +82,7 @@ function Freebook() {
 } it will show 3 card for 1024 pixel and below it 600 -2 cards and device below this only 1 cardto show, go tailwind.css and check in  responsivedesign 
  breakpoibt for each pixel sm, lg , md , xl , 2xldevices ,for less than we need to generate the width
     */
-   // this is setting
+// this is setting
   var settings = {
     dots: true,
     infinite: false,
@@ -93,7 +121,7 @@ function Freebook() {
   //there is 4 cards in a slider we want only 3 cards to dispay on our page -refer to the setting slider breakpoint
   // we need to give margin from left right so simply ADD them into our main div to resize 
   // we make cards as a separate component for our slider so we can use in main and course page as well
-  return (
+return (
     <>
     <div className='max-w-screen-2xl mx-auto px-4 md:px-8 '>
         <div>
@@ -103,10 +131,11 @@ function Freebook() {
         <div>
             <Slider {...settings}>
                 {
-                    filterdata.map((item)=>(
+                  //book is our updated state from -> use state
+                    book.map((item)=>(
                         //we will pass this item as item -> props from cards to our Freebook we will pass key too so our value is uinique we don't
                         // get any error basis of id so it will unique always as all books our unique 
-                <Cards item={item}key={item.id}/>
+                <Cards item={item}key={item._id}/>
                     // we will pass our items as props will be received that item in <cards 
                     // here item is actually book from our json which we have filter as free for this component as we will ensure all are unique
                     ))

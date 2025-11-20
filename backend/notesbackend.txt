@@ -9,3 +9,1255 @@ node js -> with help of which we can run js on server side
 // npm init , initialize node apllication at backend directory
 // will create a pkg.json ofr backend , where all info , and dependcies about are project will be there
 // we have intilazed a nodes js apllication in backend -> package.json -> all info abot project is here
+
+npm init kya karta hai? (Super Simple Explanation)
+
+npm init ek command hai jo Node.js project start karne ke liye use hota hai.
+
+Jab aap npm init chalate ho, to ye:
+
+✔️ aapke project ke liye package.json file banata hai
+
+⭐ package.json kya hota hai?
+
+package.json = Project ki details + dependencies ka record book
+
+Isme hota hai:
+
+project ka name
+
+version
+
+author
+
+scripts (example: "start": "node app.js")
+
+install kiye gaye packages ka record (example: React, Express, etc.)
+
+//backend
+//npm init -> will create ,npm init ek command hai jo Node.js project start karne ke liye use hota hai.
+package.json = Project ki details + dependencies ka record book
+
+
+for git repository for creating init just copy , its url from github that we created
+-> for creating we have created ours 
+
+/* ->
+(base) nitindubey@nitins-MacBook-Air BookStore % cd backend
+(base) nitindubey@nitins-MacBook-Air backend % npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (backend) LegacyBooksStore
+Sorry, name can no longer contain capital letters.
+package name: (backend) legacybooksstore
+version: (1.0.0) 
+description: mern project
+entry point: (index.js) 
+test command: 
+git repository: https://github.com/NitinDubey7620/LegacyBooksApp.git
+keywords: 
+author: Nitin Dubey
+license: (ISC) 
+About to write to /Users/nitindubey/BookStore/backend/package.json:
+
+{
+  "name": "legacybooksstore",
+  "version": "1.0.0",
+  "description": "mern project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NitinDubey7620/LegacyBooksApp.git"
+  },
+  "author": "Nitin Dubey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NitinDubey7620/LegacyBooksApp/issues"
+  },
+  "homepage": "https://github.com/NitinDubey7620/LegacyBooksApp#readme"
+}
+
+
+Is this OK? (yes) 
+
+(base) nitindubey@nitins-MacBook-Air backend % 
+*/
+
+// we have initialised node.js -> pkg.json in backend
+// visit express.js website -
+> is a back end web apllication framework for building restful api with nodes.js
+npm install express
+//install express
+YES — Express ko project ke andar install karna padta hai.
+Chahe system me pehle install kiya ho ya nahi.
+🔸 Reason:
+Express global install nahi hota
+Each backend project ke andar local installation hota hai (node_modules folder me)
+
+u can check in dependencies that there is no express.js in pkg.json
+->after installing it  ,in pkg.json
+-> "dependencies": {
+    "express": "^5.1.0"
+  }
+
+// next click on below , Next "hello world" example 
+u will get -> 
+
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
+-> copy code 
+-> make file our entry point , index.js
+// paste that code over there 
+const express = require('express')//import express
+const app = express()//create express app using express fucntion , that is  initialize express to use it 
+//so we can send request and can run the server without express app we can not run server 
+const port = 3000 // our server is running on this port 
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')// to handle request 
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)//to listen port , to run the node.js app 
+})
+
+// to run npm start -> will not run until in pkg.json we have not created ->  this start script 
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.js"
+  },
+-> running our code 
+(base) nitindubey@nitins-MacBook-Air backend % npm start
+> legacybooksstore@1.0.0 start
+> node index.js
+
+Example app listening on port 3000 , -> output 
+
+using node server we will run any file 
+
+//now everytime we make any changes in our requesst handling and to reflec the response 
+// we have again and again restart the noder server to solve this 
+//npm install nodemon // will restart server automatically as we make changes in the file 
+"dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.11"
+  }
+// in script add
+"start": "node index.js" ->"start": "nodemon index.js"
+
+in ternminal ->
+[nodemon] 3.1.11
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node index.js`
+Example app listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node index.js`
+
+/ port info is sensitive so we will make .env file . where it contains ,  Port = 4001 
+// way to use it , THIS WILL RUN ON PORT 4001 BUT IF THIS PORT IS NOT AVIALBLE THAN THEY WILL THEN SERVE SERVER
+// ON THIS || PORT , BYDEFAULT - 4000 (OUR APP WILL RUN ON )
+// for using env we need to install env , go on dotenv npm -> npm i dotenv
+//"dotenv": "^17.2.3",
+const PORT = process.env.PORT || 4000;
+// working->
+env file = secret values store karne ki jagah
+PORT=4000 = humne server ka port set kar diya
+process.env.PORT = Node.js ko bolo:
+“Bhai .env me jo PORT ki value hai, wo le aao.”
+
+// we can use import instead of require in express 
+// for that in pkg.json we need to define 
+// "type": "module",
+// now we can use import syntax 
+
+[nodemon] app crashed - waiting for file changes before starting... , any error and server will crash 
+//as we have made imoort , after changes from require to module ->
+//Server app listening on port 4001
+
+// now for Database 
+// we will use mongo db , for database connectivity 
+1. using mongodb atlas online , after signing
+2. installing mongo db locally and using database
+
+// we will use mongo db compass -> installed locally 
+
+// in mongodb atlas we will use cloud database -> mongodb atlas 
+// go on new cconnection , connect 
+// we will download mongo db community server -> mongo db compass -> for locally installed database
+
+// after mongo db setup just copy , copy connection string 
+->mongodb://localhost:27017/
+// we will keep it in .env
+// MongoDBURI = 'mongodb://localhost:27017/LegacyBooksStore'
+// connection string + name of databse
+MongoDB will automatically create this database the moment you insert the first document in it.
+// we will put the database code in try catch as it is rsiky code and can cause error and also may crash server
+// to prevent it from happeing 
+
+/ we need to bring the uri value using env.process.variable , will bring it value over here const uri = value
+// const MongoDBURI = process.env.MongoDBURI;
+const URI = process.env.MongoDBURI;
+
+//we will use mongoose 
+//npm i mongoose ,  "mongoose": "^8.20.0",
+// in this mongoose there is connect method using which we will connect
+//immport it 
+
+try{
+    // we don't need this parameter if we are using cloud -> mongo db atlas 
+    //as we are using db locally using monogdb compass , we need poarameter due to dependencies
+    mongoose.connect(URI,{
+        useNewUrlParser:true,
+        useUnifiedTopology:true
+    })
+    // we will put message after this 
+    console.log("Connected to mongoDB");
+}
+// in case of error
+catch(error){
+    console.log("Error",error);
+}
+// save this and start the server -> npm start
+//Connected to mongoDB , sucessfully connected to the mongodb->
+//Server app listening on port 4001
+
+// split the terminal to run backend on one side and frontend on another side ,npm start | npm run dev
+
+// the data we were using till now was in our list.json now we want it should be displaying using mongodb
+// now we will do that
+
+//we will design modell for our data
+//create folder name model , create ->
+// book.model.js 
+//we are defining model to store data in dtabase
+// for that we need , we need mongoose 
+
+import mongoose from "mongoose";
+
+// we are defining schema , where we will tell what all data we are sending to our database
+// we are defining schema for the fields ,in front in list.json 
+// we want to keep this all data in database
+const bookschema =mongoose.Schema({
+    name:String,
+    title:String,
+    price: Number,
+    category:String,
+    image:String,
+})
+// we will create model of this schema according to the field
+//book -> collection name 
+// name of schema , we ahve define the field in it in which type we will be receiving the data
+constBook =mongoose.model("Book","bookschema")
+// jo bhi data ayegaa is schema (bookschema) ayegaa vo ye collection jake store hoga 
+export default Book;
+ 
+
+
+// now we -> create folder name controller -> where we will define fucntionality
+// create book.controller.js
+// we will do get request 
+// fisrtly we need our book from model folder
+import Book from "../model/book.model";
+
+// we will do get request 
+// fisrtly we need our book from model folder
+import Book from "../model/book.model.js";
+// we have defined structure of our data in that model so we need it 
+// create a fucntion (arrow fucntion), and define logic inside it 
+export const getBook = async(req,res)=>{
+    //we will use try catch as we will connect to the data base we might get issue and handle the exception
+    try {
+        //create a model and keep our variable , we are finding data in our model
+        const book = await Book.find()// if we find data we will send the response 
+        res.status(200).json(book);//200 -> status code of success ,will send that book 
+        //we are communicating with our database to store data or to get data it might take time so this is asyn operation
+        //so we will make our fucntion async  , so we can perfrom aysnc functions in sync way 
+        // reason to use async and await 
+        //we are communicating with our database to store data or to get data it might take time  so 
+        //we want our fucntion to be pause until we don't get result if we can fetch data , so we will show 200 and data else we will show our error
+
+
+    } catch (error) {
+        console.log("Error :",error);
+        res.status(500).json(error);
+        // 500 -> for internal error
+    }
+};
+
+// our controller is ready 
+
+//we will create our route 
+//we create folder route where we will define our route
+//create a book.route.js
+// then import express
+import express from 'express'
+// we will import our function getbook here from controller
+import { getBook } from '../controller/book.controller.js'
+//create express router
+const router = express.Router();
+// with help of this router we will get request for our getbook fucntion
+
+// we get request for this url this fucntion should run 
+router.get("/",getBook);
+
+export default router; 
+// go into index main file and import this router at starting 
+/ /we had created our router now using here  ->index.js
+import bookRoute from '../route/book.route.js'
+// weare importing and storing in this variable 
+
+/afte connecting to database we wil define the routes 
+app.use("/book","bookRoute") // /book route pe bookRoute dike
+
+
+
+//as we refresh our db -> we will have collection name -> legacybooksstore ,name defaults  -> collection name books
+//mongo db use books ->at the end s 
+// the name of databse is coming from 
+MongoDBURI = 'mongodb://localhost:27017/LegacyBooksStore'
+->LegacyBooksStore
+//w4e have collection name book which wehave define in our model
+//in this collection we want ot keep the lsit .json data that why we have defined the schema of the book collection
+
+//now import data in mongo db -> go to mongodb 
+// go to the our dtabase -> go to our collection -> on left corner select the add data (import json or csv file)->
+// go to our -> nitindubey/download/BookStore/backend/public/list.json and add it
+
+// now we have got all data in our database
+
+//now we will test our api -> book.route.js -> router.get("/",getBook); -> a get request 
+// working of api -> when we go on ,app.use("/book",bookRoute) in index.js; i.e /book -> bookRoute (from route) chale
+//aur bookRoute chale matlab ->router.get("/",getBook) (book.controller.js); we say getBook -> ye fucntion chale
+// matlab const book = await Book.find()// if we find data we will send the response 
+        res.status(200).json(book);
+        // ye response ya to ye error mile jab humara getbook function run ho 
+
+// to test api we will use postman
+// we will test the api and then we will integrate it with front end 
+//install the postman -setup 
+// create separate work space in postman
+// go on collection and give create a new collection and name it Books( new collection)
+//under it add a request -> get
+/ our server is running on ->Server app listening on port 4001
+//http://localhost:4001/
+// we aren't sending any response so we can't see any response
+// copy url paste is get -> base url http://localhost:4001/book  , add book after / 
+// as /book will run the route book that we have made then it will run a fucntion and it will show the data in res
+// click on send -> 
+now u can see postsman temrinal data is coming
+------>[
+    {
+        "_id": "691c0329f3a24de19a35d0d4",
+        "id": 1,
+        "name": "Story Book",
+        "title": "Discover a smarter way to learn — anytime, anywhere.",
+        "price": 0,
+        "category": "900",
+        "image": "https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "_id": "691c0329f3a24de19a35d0d5",
+        "id": 2,
+        "name": "Life",
+        "title": "The Legacy Within — Your Journey Begins Here",
+        "price": 0,
+        "category": "Free",
+        "image": "https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "_id": "691c0329f3a24de19a35d0d6",
+        "id": 3,
+        "name": "Mind Peace",
+        "title": "Stories That Shape Souls and Build Legacies",
+        "price": 0,
+        "category": "500",
+        "image": "https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "_id": "691c0329f3a24de19a35d0d7",
+        "id": 4,
+        "name": "Friendship",
+        "title": "From Pages to Purpose — Discover, Learn, and Evolve.",
+        "price": 0,
+        "category": "700",
+        "image": "https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "_id": "691c0329f3a24de19a35d0d8",
+        "id": 5,
+        "name": "World",
+        "title": "A World of Books, A Lifetime of Legacy.",
+        "price": 0,
+        "category": "Free",
+        "image": "https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "_id": "691c0329f3a24de19a35d0d9",
+        "id": 6,
+        "name": "Story Book",
+        "title": "Dream. Read. Discover — The LegacyBooks Way",
+        "price": 0,
+        "category": "800",
+        "image": "https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "_id": "691c0329f3a24de19a35d0da",
+        "id": 7,
+        "name": "Story Book",
+        "title": "Beyond Words — Creating Legacies Through Knowledge",
+        "price": 0,
+        "category": "900",
+        "image": "https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "_id": "691c0329f3a24de19a35d0db",
+        "id": 8,
+        "name": "Universe Story",
+        "title": "Every Book Holds a Universe — Find Yours.",
+        "price": 0,
+        "category": "Free",
+        "image": "https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "_id": "691c0329f3a24de19a35d0dc",
+        "id": 9,
+        "name": "ShortStory",
+        "title": "Timeless Tales, Endless Learning.",
+        "price": 0,
+        "category": "Free",
+        "image": "https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "_id": "691c0329f3a24de19a35d0dd",
+        "id": 10,
+        "name": "novels",
+        "title": "LegacyBooks — Where Great Stories Never End",
+        "price": 0,
+        "category": "200",
+        "image": "https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "_id": "691c0329f3a24de19a35d0de",
+        "id": 11,
+        "name": "novels",
+        "title": "Great Stories Never End",
+        "price": 0,
+        "category": "790",
+        "image": "https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    },
+    {
+        "_id": "691c0329f3a24de19a35d0df",
+        "id": 12,
+        "name": "AutoBiography",
+        "title": "Great Stories ",
+        "price": 500,
+        "category": "history",
+        "image": "https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
+    }
+]
+
+//mongo db add uinique id for every data field
+
+// this means our api is working successfully  in response we are getting data 
+//api test is done 
+// we need to integrate with our front end 
+ 
+ //our backend is done 
+
+//we will go in front end 
+-> src->component->course
+
+import list from "../../public/list.json" 
+// we getting our data from here , now we don't need it as we have made a backend and connect with the database 
+//after creating the schema, for the databse and after connection we have imported the data
+
+//we call our api in frontend -> to communicate with api in frontend we use javascript library [ axois] 
+//we used it to send and recieve http request
+// install axios it in front end -> npm i axios
+// after it has got installed , we call our backend api 
+//for that we define state first 
+
+//we used it to send and recieve http request
+// install axios it in front end -> npm i axios
+// after it has got installed , we call our backend api 
+//for that we define state first 
+import Cards from './Cards'
+import {Link} from 'react-router-dom'
+import axios from 'axios'
+function Course() {
+  //backend -> api call from frontend to our api we created at backend -> to get request -> to get the data->book
+  //a variable and fucntion set book  , it will come from usestate (will get imported)
+  // in starting it will be empty array if there is no data
+  //we will use -> useEffect , now we will call our api for the data
+  // we will pass empty array in useEffect so it runs only one time 
+  // we will make fucntion and it will be a sync function as we are requesting from the backend funtion
+  //we will use try catch block
+  // we call our api -> import axois 
+  // axois.get(api's url , i.e endpoint ) ( request because the api that we have made is get request)
+  // our url -> go on postman and copy url for which we used for checking our api ->http://localhost:4001/book
+  // we will use await , async - await -> is a async func that , we we get request and its taking time so it wil hold
+  // until the repsonse comes (wait) and if response comes we will res success response else show  -> error 
+  //store in res variable 
+  // we see our data , response.data
+  // we will also change our state keep our data in ,setBook(res.data)
+  // we don't need list.json -> now our data is in book-> we are getting using the function 
+  //we need to map with book instead of list
+  // we will run this and check whether data is coming or not 
+  //on course route , http://localhost:5173/course
+  const [book,setBook]=useState([])
+    useEffect(()=>{
+      const getBook = async()=>{
+        try {
+          // we will call our api 
+          const res = await axios.get("http://localhost:4001/book");
+          console.log(res.data);
+          setBook(res.data); // it will come from setbook to our variable -> book and we can use the variable 
+          //im our mapping 
+        } catch (error) {
+          //if there is error we throe the error in the console
+          console.log(error);
+        }// our api call is ready so noww we will call our function here 
+      }
+      getBook(); // calling our function here
+    },[])
+
+//we need to map with book instead of list
+        //  list.map((item)=>
+          book.map((item)=>
+        <Cards key={item._id} item={item}></Cards>)
+        }
+
+//once have done completed api call and when we run the 'http://localhost:4001/course' we get error 
+Access to XMLHttpRequest at 'http://localhost:4001/book' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.Understand this error
+Course.jsx:45 
+
+// we get these error because frontend in running on port:5173 and backend on port 4001 both on different port so
+//CORS doesn't allow us to acess the backend data ,otherwise anyone can acess our backend data
+// we will fix this CORS error 
+//go on backend and install CORS
+after isntalling it ,"cors": "^2.8.5",
+//it a middle ware 
+import cors from 'cors';
+// we will import it in index.js file 
+
+app.use(cors());
+
+//start backend -> npm start 
+//afetr refresh u can see on console that we are getting data
+// this data is coming from backend
+
+//how we are getting data by api call
+const res = await axios.get("http://localhost:4001/book"); - >we have called api , get request 
+console.log(res.data); -> response we are getting 
+// setBook(res.data); -> we have sent our resposne using setbook fucntion 
+//book -> state got updated -> and with book we are mapping our data 
+// no data is coming from the backend -> no frontend
+
+// we have also in freebook -> where we were filtering and showing free book 
+// now we have to do from backend us axois in src->component->Freebook.jsx 
+//import axois 
+// we will use same function defined in the just bit adjust it for the filter data to show on home page 
+const [book,setBook]=useState([])
+    useEffect(()=>{
+      const getBook = async()=>{
+        try {
+          // we will call our api 
+          const res = await axios.get("http://localhost:4001/book");
+          const data=res.data.filter((data)=>data.category==="Free")
+          console.log(data);
+          setBook(data); // it will come from setbook to our variable -> book and we can use the variable 
+          //im our mapping 
+        } catch (error) {
+          //if there is error we throe the error in the console
+          console.log(error);
+        }// our api call is ready so noww we will call our function here 
+      }
+      getBook(); // calling our function here
+    },[]);
+// bit changes 
+now u can see on console all the filter data 
+/(4) [{…}, {…}, {…}, {…}]0: {_id: '691c0329f3a24de19a35d0d5', id: 2, name: 'Life', title: 'The Legacy Within — Your Journey Begins Here', price: 0, …}1: {_id: '691c0329f3a24de19a35d0d8', id: 5, name: 'World', title: 'A World of Books, A Lifetime of Legacy.', price: 0, …}2: {_id: '691c0329f3a24de19a35d0db', id: 8, name: 'Universe Story', title: 'Every Book Holds a Universe — Find Yours.', price: 0, …}3: {_id: '691c0329f3a24de19a35d0dc', id: 9, name: 'ShortStory', title: 'Timeless Tales, Endless Learning.', price: 0, …}length: 4[[Prototype]]: Array(0)
+
+//we have wrote code following the industry standard 
+//we have stored data in mongo db and then we have called the api and fetched the data on frontend
+
+//we need to now work on login/resgister page 
+// where user implement this fucntionality , validate user and only authentic user can visit the apge and other user can't acess it 
+
+we can delete list.json that we have made in public folder 
+// still there is data on our website ->suggest that the data is coming from the backend -> database
+
+//very important
+// create user , authenticate user , and login and log out user
+// we will create model for user -> in backend -> model -> user.model.js
+
+//we will define the user schema 
+
+go on postman and create new collection user 
+//add -> post request
+// select ->body -> select raw -> here json formart will come {}
+//first data we need user name , second data we need eamil id 
+//we want one value , third , to enter password of user in the database 
+{
+    "Fullname":"Nitin",
+    "Email id":"nitindubey04979@gmail.com",
+    "Password":"123456"
+}
+// we want user to fill this much data during register then only he can create account
+// we want user to fill this much data during register then only he can create account
+// for this we will define schema for the database 
+//we are creating user schema
+import mongoose from "mongoose";
+const userSchema=mongoose.Schema({
+    fullname:{
+        type:String,
+        required:true // that means we need , dena hi hoga fullname
+    },
+    email:{
+        type:String,
+        required:true, //we need both compulasary and also email should be unique
+        unique:true,
+    },
+    password:{
+        type:String,
+        required:true
+    },
+})
+// we will convert the schema we have defined into model ,userschema -> into model
+//we want these many data in these format to store in database 
+const User =mongoose.model("User",userSchema);
+export default User;
+//now we will define the controller
+// in controller -> user.controller.js
+
+// after defining our schema for stroing tha data in the format we want in database we will define controller 
+//we will define the fucntion in controller
+
+// after defining our schema for stroing tha data in the format we want in database we will define controller 
+//we will define the fucntion
+//collection name -> User , that we have defined and also its scehema in user.model.js
+//import the model bcz we want data to be stored in that model
+import User from "../model/user.model";
+export const signup = (req,res)=>{
+    // firstly we want email id ,pass and fullname 
+    //we will get that data from body , this called body that we have written in the json in postman 
+    /*
+    {
+    "Fullname":"Nitin",
+    "Email id":"nitindubey04979@gmail.com",
+    "Password":"123456"
+    }
+    */
+   //we will use try catch and get data from our body 
+   try {
+    const {fullname,email,password}=req.body; // after gettig data
+    // we will check whether user is registered already from 
+    //we will find in the in our model 
+    // beacuse database will be of this name only ->User ,we check in DB findOne as there wil be only one user , find through email -> will be unique
+    const user = User.findOne({email})
+    //if the data coming from the body is present in the User DB collection 
+    if(user){
+        return res.status(400).json({message:"User alreay exists"});
+        // if user does't exist then we will store the user coming from the body in our D.B ->User ( as new user)
+        // we will store our data in this variable ,new model name (where we want to store)
+        const createdUser = new User({
+            // WHAT ALL WE WANT TO STORE 
+            fullname,
+            emai,
+            password
+            // we will store this and will save this data
+        });
+        //will get save in db  and send response then after the saving it 
+            createdUser.save()
+            res.status(201).json({message:"User created Successfully"})
+    }
+   } catch (error) {
+    console.log(error,error+message)
+    //res
+    res.status(500).json({message:"Internal server error"})
+   }
+}
+
+//now we have to define route for this -> go on the route folder ->user.route .js
+
+// we will define the route for the our -> user when user new or old(which can't) resgisters 
+import express from 'express' // we need this first to define the route 
+import { signup } from '../controller/user.controller.js';
+// we need router over here
+const router =express.Router();//we will export this router 
+//here we will define our route 
+// what will be our request ----> if we check in the post man -> we are sending (body) data so it will be post request
+router.post("/signup");
+// this will have end point signup 
+// the function that should run on signup -> is we have define in controller -> user.controller.js 
+//we will get the function from controller -> import it  ,import { signup } from '../controller/user.controller.js ';
+//we will use this signup fucntion over here 
+//we will import user router from this router in index.js
+export default router;
+
+//now api test 
+
+// after import the name is given by us -> its actually for export , index.js
+//we will import user router from this router in index.js ( for signup ) which runs fucntion define it its controller
+import userRoute from "./route/user.route.js";
+app.use("/users",userRoute); //we will define the user route for signup
+//as we save this a collection will be created in db under legacybookstore
+
+working -> /user -> user.route -> ye route chalegaa->inside it -> /signup -> signup (function) chalegaa
+/also make sure that the data in the post man body is also is the same that we haved defined in the scehema
+//as this is post request 
+in postman give , post , url ->http://localhost:4001/users/signup
+we alreadt have ,
+{
+  "fullname": "Nitin",
+  "email": "nitin@example.com",
+  "password": "123456"
+}
+, we will sent it 
+// the data we are sending from post man is notreaching beacuse we have to parse the data in json form 
+app.use(express.json()); // IMPORTANT for POST requests
+
+on postman output ->json
+//as user didn't existed -> using the postman body 
+{
+    "message": "User created Successfully"
+}
+//as user has been created in our db -> user 
+// if we send the request again for the same postman body on post request -> users/signupp 
+{
+    "message": "User alreay exists"
+}
+//beacause the user was already created 
+//our api we have created is working properly 
+
+//in mongo db -->
+
+_id 691d6ca525433bfff422e3f1
+fullname "Nitin"
+email "nitin@example.com"
+password"123456"
+__v0
+
+//here we have password visble , but if any one acessing our database can see the passwrord -> for security reason we will secure our password
+
+//for that we will use bcrypt , 
+//npm i b crypt ,in backend  ,        "bcryptjs": "^3.0.3",
+//we use this in our controller
+
+
+// before we write the pass we will we hash it 
+
+import bycryptjs from 'bcryptjs'; // use for securing the password so no one can view in the database
+
+const hashPassword= await bcryptjs.hash(password,10)
+        //we will pass the hash pss 
+        const createdUser = new User({
+            // WHAT ALL WE WANT TO STORE 
+            fullname:fullname,
+            email:email,
+            password:hashPassword,
+            // password
+            // we will store this and will save this data
+        });
+
+// now check by entering new user data in the postman body and send the post request on -> users/singup -> 
+//refresh -> rigth on the user collection ->
+id
+691d7469613e9dbd83951818
+fullname :"sachin"
+email:"sachin @example.com"
+password:"$2b$10$8NDAnZMYjTV3qrhf/xw41OLT5uryTBqEC/oAn21qvb5ljRvofIuxS"
+__v:0
+// this time pass is hash we can't see it ->password:"$2b$10$8NDAnZMYjTV3qrhf/xw41OLT5uryTBqEC/oAn21qvb5ljRvofIuxS"
+//even if anyone has acess of the database he can't see pass now 
+
+
+//now we have to do for login ,we will define the controller in user.controller.js
+
+/now we have to do for login ,we will define the controller in user.controller.js
+//async func as we are perfoming async func 
+export const login = async (req,res)=>{
+    // we will vlaidate user from the database whether he is logged in already or not
+    //we will use try cathcblock , this istype of promise to handle async func as we are aysnc await 
+    //while login we need email and password
+    //we will get email and pass from body 
+    try {
+        const {email,password}= req.body;//afetr getting this we will find in our data base
+        const user = await User.findOne({email}) // we are using same fucntion to check as email will be unique so to check the uniqueness
+        //we will compare user given pass word with the password give by user in the database 
+        //when user entered pass during resgistartion it got saved and now when he login we will compare his login given pass with stored pass
+        //so he can login , pass is stored in hash form in d.b we we use bcrypt js 
+        const isMatch = bcryptjs.compare(password,user.password);//compare the user pass with user stored pass user.password -> d.b pass
+        // if the both pass is same the user can login 
+        //w have found user and have compare the pass
+        if(!user || !password){
+            res.status(400).json({message:"Invalid user name or password"});
+        }else{
+            //if the everything is right we will send the success status
+            //we also send user full name and email  and id from mongo db  if success
+            //here we are finding the user from the data base and storing it in user var so now we will find all imfo related to it _id :var._id.-> _id:user._id,
+            res.status(200).json({message:"Login scuccessfull",user:
+                {
+                    _id:user._id,
+                    fullname:user.fullname,
+                    email:user.email
+                }
+            })
+        }
+    } catch (error) {
+        //we will print the error in the console so we can check if we get any error
+        console.log("Error",error+message);
+        res.status(500).json({message:"Internal server error "})
+    }
+    //now we will define route for this , post request, on user.route.js
+} 
+
+/defining route for the login in user.route.js
+router.post("/login",login) ;// login func so we need to bring it from the controller where we have defined
+// import { signup ,login} from '../controller/user.controller.js';
+
+// now to test the api for login 
+//now in postman just duplicate the post request , we previously created 
+//body -> raw -> body ->
+{
+  "email": "sachin @example.com",
+  "password": "1345356"
+}
+//we need this field for login ,post request
+to test give the url -> endpoint of api
+->http://localhost:4001/users/login
+->when we send the psot request to our login 
+{
+    "message": "Login scuccessfull",
+    "user": {
+        "_id": "691d7469613e9dbd83951818",
+        "fullname": "sachin",
+        "email": "sachin @example.com"
+    }
+}
+
+// for this dat where pass is different{
+  "email": "sachin @example.com",
+  "password": "1367393"
+}
+{
+    "message": "Invalid user name or password"
+}
+// it showed this message as pass didn't match so user can't login
+//we are using await so we know it would take time for response to come 
+
+//we use async func when we demand something from backend when we call api
+//getting database or sending data to database - >so this all operations take time and are bloking operation 
+//so we use aynsc so we can perfrom our fucntion in synchronous way
+
+//as we enter the right pass it will show login scuccessfull
+
+// the concept of js promise is used if we get response it will show response otherwise it will show the error
+
+//the logout we will direct in our front end we don't need to create api for it 
+
+//now we will go in our frontend -> open component-> open signup we will call our signup api and will add frontend with backend
+
+//we store this data in the database by calling our api 
+
+//const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm();
+  
+    const onSubmit =async (data) => {
+      // this data contains email , name as pass , we can check it by printing it thats why data
+      //we are  taking field as fullanme so we will use the name -< fullname
+      const userInfo ={
+        fullname:data.fullname,
+        email:data.email,
+        password:data.password
+      };
+      //we want to store this data in the backend so we are calling api , post request as we have made post request -> check in the backend or postman
+      //we will use axios 
+      //we need to give endpoint -> url 
+      //at his url we want to store the userInfo 
+      //and we we will use then and catch , in then we get response with arrow function
+      await axios.post("http://localhost:4001/users/signup",userInfo)
+      .then((res)=>{
+        // we will console log the response we are getting
+        console.log(res.data);
+        //we will use if -> if we have resposne data the we will do the signup and show message 
+        if(res.data){
+          alert("Signup Succesfull");
+        }// if we don't response we will make catch , in catch we handle error ,we will have error we will handle in catch 
+      }).catch((err)=>{
+        // to see on console we can just print it 
+        //we will make fucn aysnc ->because we are calling api
+        //we will call api and will wait for it to be executed once we get res we will handle it by ,then and if we get error we will run .catch
+        // this is like promise either we gtw  res ->successfull or err->reject 
+        console.log(err)
+        alert("Signup Error : "+err);
+      });
+
+
+      // document.getElementById("my_modal_3").close(); // close modal after submit
+    };
+    // also import axios 
+    //test this on the console by opeing the website and open signup on websites and fill the form and see the data on the console.
+    ->{message: 'User created Successfully'}message: "User created Successfully"[[Prototype]]: Object
+    -> we got this response from the backend
+we can check in our database -> new user got created -> signup successfully
+    //id
+691da7fb7598a8b24b2c4db7
+fullname:"Nititn Dubey"
+email:"tangentgamer07@gmail.com"
+password:"$2b$10$SmZ8JSw7tAnzhyIMoClaS.qA8FD0tntWLBYYUIgMS1B2.W5xmx/qG"
+__v:0
+we can check in our database -> new user got created -> signup successfully, signup part . export signup
+
+// from backend we will send user email , id and name 
+//go into backend and go to the controller ->user controller -> along with user created message  
+
+when we try to login with samecredentials -> we get alert ->Signup Error : AxiosError: Request failed with status code 400
+in network ->for that request ->{"message":"User alreay exists"}
+//when we try to login with same data
+//beacuse error weare not understanding whether user exists or not so we will send it as respsonse it user exit , do it in signup 
+//for signup -> if (user exists) part -> show this resposne ->{"message":"User alreay exists"}
+// so instead of showing error we will show the in if condtion ->{"message":"User alreay exists"}
+
+if(err.response){
+         console.log(err)
+        alert("Signup Error : "+err.response.data.message);
+       }
+      });
+
+, now if we login , we will get message -> alert , locaohost says ->Signup Error : User alreay exists
+
+// if we enter the new user data , the user will be created successfully ,signup done and 
+//we want the data of user to be stored on local storage , console->application->local storage->localhost -> key :value 
+//beaucse we want the course route to be showed to authentic user , without user our -> course route shouldn't be opeing 
+//course is part of navbar and we have define its route in app component , so we can use the data of this component 
+//we want it to be store in local storage
+//after signup we want 
+await axios.post("http://localhost:4001/users/signup",userInfo)
+      .then((res)=>{
+        // we will console log the response we are getting
+        console.log(res.data);
+        //we will use if -> if we have resposne data the we will do the signup and show message 
+        if(res.data){
+          alert("Signup Successfull");
+        }// if we don't response we will make catch , in catch we handle error ,we will have error we will handle in catch 
+      }).catch((err)=>{
+//this data to be stored in local storage 
+localStorage.setItem("User",res.data); // this will store tha data on webrowsers local storage
+
+to test it just sign up with new data and check it in inspect->apllication->localStorage->key: value (on right on side)
+//User	[object Object] 
+//WE WILL GET  data IN FORM OF OBJECT in local stoarage so we will ,PARSE IT 
+->JSON.stringify(res.data))
+//it will show the data in the exact response way ->in local storage
+
+//after json stringify we will get -> on localstorage ->localhost
+//{"message":"User created Successfully","user":{"_id":"691db643b6af905945f09b15","fullname":"Shree","email":"Shree@gmail.com"}}
+//we only want ofr user like -> JSON.stringify(res.data.user)) , its coming as message we want as data 
+//user {"_id":"691db6d2b6af905945f09b18","fullname":"harry","email":"harry@gmail.com"}
+
+//we can use this data anywhere using context api 
+
+//we want to do this all things at front end -> 
+we want sent data from front end to the db using the api call , psot request and store data , we will exactly use this just bit changes\
+
+// change the route to login route ->http://localhost:4001/users/login
+
+// for login to check use the data of existing user 
+// use the api we built test by postman
+{
+  "email": "sachin @example.com",
+  "password": "1367393"
+}
+//as all pass has got hash we don't it but initially we had stored a data that had unhashed pass -> so use it 
+//for this which already exists
+//go on browser check for loginb
+
+//->Loggedin sucessfully 
+//->if any value doesn't matches so we will get error -> invalid user name or password
+fullname:"Harish"
+email:"harish1234@gmail.com"
+//pass we know , 762005
+//{"_id":"691e1252b6af905945f09b2b","fullname":"Harish","email":"harish1234@gmail.com"}
+// this the data we got in console,browser and we have stored in local storage pf browser
+
+//the alert we are getting is not good looking so we make a good popup->
+//we will use library react hot toast //npm install react-hot-toast
+// in frontend ,    "react-hot-toast": "^2.6.0",
+//keep toaster in app.jsx <Toaster />
+//also ,import toast, { Toaster } from 'react-hot-toast'; , in app.jsx ,in all file to support it 
+// go on website of toast and -> search for toast for succes we will use toast ->toast.success('Successfully created!');
+// for error ,toast.error('This is an error!');
+//replace all the alert with this for particular message type 
+//then start the the frontend npm run dev -> to check
+// now u will see different alert box 
+
+// now we will create context api in frontend ->
+uske through localstorage se user ko recieve karge ane api me and we will use it in another component 
+//and we will protect the course route that if any user has sign in or logged then only he can see the course page 
+//otherwise this page shouldn't open
+// go into src in frontend create a folder name context ->AuthProvider.jsx
+
+import React, { createContext, useContext, useState } from 'react'
+import { Children } from 'react';
+
+// to create context ,name ,AuthContext ,to create context ->createContext() -> available in react
+export const AuthContext = createContext()
+
+//we will first provide children - >in this other compo will come like app.jsx ,navbar.jsx ,banner.jsx this are children
+// in all this we can use our context , thats why we are passing it as children
+export default function AuthProvider(){
+    //first work is to bring user from the local storage to bring in our context for that we will we will sue var 
+    const initialAuthUser=localStorage.getItem("Users"); // in our var we have got localstorage user 
+    // now we will manage state, a [variable and function ]
+    //we are using useSate to manage the state , user is getting loggin , logged, according to this we will keep the state ,
+    //  only the user is logged in we will keep his info and will change the state accordingly, thats why we need to manage the state 
+    const [authUser, setAuthUser]=useState(
+        //in usestate we will do , if initialAuthUser is there then parse otherwise keep it undefined
+        initialAuthUser?JSON.parse(initialAuthUser):undefined,
+    )
+    //know we will return authcontex
+    return(
+        <AuthContext.Provider value={{authUser,setAuthUser}}>
+            {children}
+        </AuthContext.Provider>
+    )
+};
+//we are creating our own hook 
+// using this useAuth-> hook , we will use {authUser,setAuthUser}}
+export const useAuth=()=>useContext(AuthContext); // AuthContext-> const that we have created to use it we will pass it over here
+
+// our context api ready we want our user to be accessed globally everwhere 
+//we have to wrap our context in main.jsx
+
+createRoot(document.getElementById('root')).render(
+<BrowserRouter>
+<AuthProvider>
+<div>
+  // our context api ready we want our user to be accessed globally everwhere 
+//we have to wrap our context in main.jsx
+//we will keep our app in main.jsx inside the AuthProvider , that we have created , it wil get imported
+  <App></App>
+</div>
+</AuthProvider>
+</BrowserRouter>
+  
+);
+
+//we will go in navbar to check whether this is running or not 
+const [authUser,setAuthUser] =useAuth();
+    //we will console and check what we are getting in auth user 
+    console.log(authUser);
+    //after printing this onto the console we get this->
+{message: 'Login scuccessfull', user: {…}}message: "Login scuccessfull"user: {_id: '691e1252b6af905945f09b2b', fullname: 'Harish', email: 'harish1234@gmail.com'}[[Prototype]]: Object
+//we got logged in user , now we can protect the course route
+
+const [authUser,setAuthUser] =useAuth();
+    //we will console and check what we are getting in auth user 
+    console.log(authUser);
+*/ // we willsue this app.jsx->
+
+ {/*} <Route path="/course" element={<Courses></Courses>}/> // this our course route we have protect this */}
+<Route path="/course"element={authUser ? <Courses /> : <Navigate to="/signup" />}/>   
+ {/*if there is authuser show this course component else naviagte to signup page 
+    navigate is in our react router dom ->we use this navigate to differernt route */}
+
+    //in homepage afetr login that's we are getting user detail 
+    ->{message: 'Login scuccessfull', user: {…}}
+    
+    
+    message: "Login scuccessfull"user: {_id: '691e1252b6af905945f09b2b', fullname: 'Harish', email: 'harish1234@gmail.com'}[[Prototype]]: Object
+
+    now we can see as we have user , but as we logout (fucntionality that we are going add)  so when user logout we can't see the 
+    course page once we log out 
+
+    create a component for logout.jsx
+    //and import it in navbar 
+
+    //we want this to be on our same button on as login button ->as logout until we are login 
+    //when fresh user open the page so he sees login 
+    import React from 'react'
+//inside this we will implement the logout fucntionality  and design it 
+//and import it in navbar 
+// import Logout from './Logout';
+function Logout() {
+  return (
+    <div>
+        <button className='px-3 py-2 bg-red-500 text-white rounded-md cursor-pointer'>Logout</button>
+        
+    </div>
+  )
+}
+
+export default Logout
+// we will use this in our navbar
+//for that we need authuser -> that tells user has logged in we will get from useAuth, we have defined 
+//we will implement the fucntionality of login and logout base on this authuser condition
+// we wil write in navaar near login a js code 
+
+{
+  //if user is login then show logout else show login , we implemented this at end after building the logout button afetr the creating context api for authuser -> which is logged in
+  authUser?(<Logout></Logout> ):(<div className="">
+                                {/*we remove the "navbar from here so we can merger the menu and login button 
+                                so className="navbar-end" = className="" 
+                                we will make chnages to bt -> bg black ,text white, rounded medium and hover - bg
+                                colour slate-800 duration 300 milli secs tailwind css class*/}
+                            <a className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
+                              onClick={()=>document.getElementById("my_modal_3").showModal()}>
+                              {/*// this daisy ui modal on click it gets open
+    // we will us id="my_modal_3 in our navbar ( beacuse login button is on navbar)
+    // on click in navbar it will open login button
+    // showModal() is a funtion which will open that modal and 
+    // we are getting it using document.getElementById(" id in login.jsx in modal")
+    // a dom method  */}
+                              Login</a>
+                              <Login>
+                                </Login>{/* we will import login here to use it  */}
+                            </div>
+)}
+// we can see logo out button and also the user data as we are Loggedin we will , need to implement the
+//logout fucntionality to make it working
+//we get user ->null
+//after implementingt the logout using context api , authuser from the localstoarage ->
+email:"harish1234@gmail.com"
+fullname:"Harish"
+user:null
+_id: "691e1252b6af905945f09b2b"
+[[Prototype]]: Object
+//also we will not get in local storage -> 
+//so we will get nothing data of user in local storage as on log out -> user:null , existing user -> so remove the localstaorage data for the user \
+
+window.location.reload(); //we are using func to prevent reload after login to view the course page
+        // we need to refresh after login to view the course page , we will reload page automatically when its logged out 
+    } catch (err) {
+
+// on home page user it undefined -> on app.jsx 
+// so we need to login , as we login we , on login.jsx  
+get {message: 'Login scuccessfull', user: {…}}message: "Login scuccessfull"user: {_id: '691e1252b6af905945f09b2b', fullname: 'Harish', email: 'harish1234@gmail.com'}[[Prototype]]: Object
+//we can see the logout button to
+// now we can visit the courses page ->
+(12) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+0
+: 
+{_id: '691c0329f3a24de19a35d0d4', id: 1, name: 'Story Book', title: 'Discover a smarter way to learn — anytime, anywhere.', price: 0, …}
+1
+: 
+{_id: '691c0329f3a24de19a35d0d5', id: 2, name: 'Life', title: 'The Legacy Within — Your Journey Begins Here', price: 0, …}
+2
+: 
+{_id: '691c0329f3a24de19a35d0d6', id: 3, name: 'Mind Peace', title: 'Stories That Shape Souls and Build Legacies', price: 0, …}
+3
+: 
+{_id: '691c0329f3a24de19a35d0d7', id: 4, name: 'Friendship', title: 'From Pages to Purpose — Discover, Learn, and Evolve.', price: 0, …}
+4
+: 
+{_id: '691c0329f3a24de19a35d0d8', id: 5, name: 'World', title: 'A World of Books, A Lifetime of Legacy.', price: 0, …}
+5
+: 
+{_id: '691c0329f3a24de19a35d0d9', id: 6, name: 'Story Book', title: 'Dream. Read. Discover — The LegacyBooks Way', price: 0, …}
+6
+: 
+{_id: '691c0329f3a24de19a35d0da', id: 7, name: 'Story Book', title: 'Beyond Words — Creating Legacies Through Knowledge', price: 0, …}
+7
+: 
+{_id: '691c0329f3a24de19a35d0db', id: 8, name: 'Universe Story', title: 'Every Book Holds a Universe — Find Yours.', price: 0, …}
+8
+: 
+{_id: '691c0329f3a24de19a35d0dc', id: 9, name: 'ShortStory', title: 'Timeless Tales, Endless Learning.', price: 0, …}
+9
+: 
+{_id: '691c0329f3a24de19a35d0dd', id: 10, name: 'novels', title: 'LegacyBooks — Where Great Stories Never End', price: 0, …}
+10
+: 
+{_id: '691c0329f3a24de19a35d0de', id: 11, name: 'novels', title: 'Great Stories Never End', price: 0, …}
+11
+: 
+{_id: '691c0329f3a24de19a35d0df', id: 12, name: 'AutoBiography', title: 'Great Stories ', price: 500, …}
+length
+: 
+12
+//we see the data 
+
+//as we logout we get out -> of the course and on login page 
+
+// as we login we aren't seeing login clsoing automatically we need to close manually 
+// we will fix this , go on login comp , as we get login we want to close the login modal
+          onClick={() => document.getElementById("my_modal_3").close()};
+we will use this in the our log in api call to close after login 
+document.getElementById("my_modal_3").close()};
+          window.location.reload(); - >to refresh the window
+
+// we will set time out in case if it diplays the alert , toast message and then close after few seconds 
+//we will use settimeour fucntion in js 
+//we need to implement in logout and logged in both 
+
+
+localStorage.removeItem("User"); // this the same user we have in our context, we wwill use toast to display the message 
+        toast.success("Logout Successfully");
+        // window.location.reload(); //we are using func to prevent reload after login to view the course page
+        // we need to refresh after login to view the course page , we will reload page automatically when its logged out
+        setTimeout(()=>{
+          window.location.reload();
+          },3000) 
+    } catch (err) {
+        //here we we will show error if user doesn't logout using toast
+        toast.error("Error : "+err);
+        setTimeout(()=>{},3000)
+    }
+}
+// now  both are working successfull along with we have set timer to show the error too for few seconds
+
+we need to do this for singup page too when user signup , just navigate to homepage and also just -> update the state , like login or logout 
+//we will sue location
+
+const location=useLocation();//we want location that our page is now on which location, we will get it from react router dom
+  //we will define the location , a variable  ,hume vo path do otherwose we sill provide alternate path home page 
+  const navigate =useNavigate();
+  const from=location.state?.from?.pathname || "/"
+ // we have got this to use this we will use navigate , where toast gets success we will naivigate it to hompage 
+ import { Link, useLocation, useNavigate } from 'react-router-dom'
+
+after toast to use navigate ->          navigate(from,{replace:true});
+
+// now we have secure our course page that only authentic user can see the course only on log in as we log out we 
+//we will get out of course and on singup page 
+
+
+// to rename our page name go to index.html change the title
+
+//our project is complete we can do last work is to push all code to github 
+//new terminal on root directory 
+//we will check whether a repo is assign to a project or not ->git remote -v
+->origin  https://github.com/NitinDubey7620/LegacyBooksApp.git (fetch)
+origin  https://github.com/NitinDubey7620/LegacyBooksApp.git (push)
+// we had pushed our front end so this repo is assign for our project 
+// u can go on github and check directory u can see the or repo and frontend it 
+//now we will push the backend ->git add .
+//to push -> we will use -> git add .
+// after adding all the backedn -> git commit -m "Backend Done"

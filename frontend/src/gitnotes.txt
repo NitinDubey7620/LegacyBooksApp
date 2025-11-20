@@ -1,0 +1,287 @@
+git all commands in vs code terminal --> 
+
+(base) nitindubey@nitins-MacBook-Air BookStore % git init
+Initialized empty Git repository in /Users/nitindubey/BookStore/.git/
+(base) nitindubey@nitins-MacBook-Air BookStore % git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+(base) nitindubey@nitins-MacBook-Air BookStore % git add .
+(base) nitindubey@nitins-MacBook-Air BookStore % git status
+
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .DS_Store
+        new file:   backend/notesbackend.txt
+        new file:   frontend/.gitignore
+        new file:   frontend/README.md
+        new file:   frontend/eslint.config.js
+        new file:   frontend/index.html
+        new file:   frontend/package-lock.json
+        new file:   frontend/package.json
+        new file:   frontend/postcss.config.js
+        new file:   frontend/public/banner.jpg
+        new file:   frontend/public/bookstorepic.jpg
+        new file:   frontend/public/gradient-stack-books-illustration.png
+        new file:   frontend/public/image.png
+        new file:   frontend/public/imagebook.jpg
+        new file:   frontend/public/list.json
+        new file:   frontend/public/routes.txt
+        new file:   frontend/public/vite.svg
+        new file:   frontend/src/App.jsx
+        new file:   frontend/src/assets/home/Home.jsx
+        new file:   frontend/src/assets/react.svg
+        new file:   frontend/src/components/Banner.jsx
+        new file:   frontend/src/components/Cards.jsx
+        new file:   frontend/src/components/Course.jsx
+        new file:   frontend/src/components/Footer.jsx
+        new file:   frontend/src/components/Freebook.jsx
+        new file:   frontend/src/components/Login.jsx
+        new file:   frontend/src/components/Navbar.jsx
+        new file:   frontend/src/components/Signup.jsx
+        new file:   frontend/src/courses/Courses.jsx
+        new file:   frontend/src/index.css
+        new file:   frontend/src/main.jsx
+        new file:   frontend/tailwind.config.js
+        new file:   frontend/vite.config.js
+
+(base) nitindubey@nitins-MacBook-Air BookStore % git commit -m "Frontend Done!!"
+git commit -m "Frontend Donegit status
+"
+[main (root-commit) 3c8fe8d] Frontend Donegit status
+ Committer: nitin dubey <nitindubey@nitins-MacBook-Air.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 33 files changed, 5213 insertions(+)
+ create mode 100644 .DS_Store
+ create mode 100644 backend/notesbackend.txt
+ create mode 100644 frontend/.gitignore
+ create mode 100644 frontend/README.md
+ create mode 100644 frontend/eslint.config.js
+ create mode 100644 frontend/index.html
+ create mode 100644 frontend/package-lock.json
+ create mode 100644 frontend/package.json
+ create mode 100644 frontend/postcss.config.js
+ create mode 100644 frontend/public/banner.jpg
+ create mode 100644 frontend/public/bookstorepic.jpg
+ create mode 100644 frontend/public/gradient-stack-books-illustration.png
+ create mode 100644 frontend/public/image.png
+ create mode 100644 frontend/public/imagebook.jpg
+ create mode 100644 frontend/public/list.json
+ create mode 100644 frontend/public/routes.txt
+ create mode 100644 frontend/public/vite.svg
+ create mode 100644 frontend/src/App.jsx
+ create mode 100644 frontend/src/assets/home/Home.jsx
+ create mode 100644 frontend/src/assets/react.svg
+ create mode 100644 frontend/src/components/Banner.jsx
+ create mode 100644 frontend/src/components/Cards.jsx
+ create mode 100644 frontend/src/components/Course.jsx
+ create mode 100644 frontend/src/components/Footer.jsx
+ create mode 100644 frontend/src/components/Freebook.jsx
+ create mode 100644 frontend/src/components/Login.jsx
+ create mode 100644 frontend/src/components/Navbar.jsx
+ create mode 100644 frontend/src/components/Signup.jsx
+ create mode 100644 frontend/src/courses/Courses.jsx
+ create mode 100644 frontend/src/index.css
+ create mode 100644 frontend/src/main.jsx
+ create mode 100644 frontend/tailwind.config.js
+ create mode 100644 frontend/vite.config.js
+(base) nitindubey@nitins-MacBook-Air BookStore % git remote add origin https://github.com/NitinDubey7620/LegacyBooksApp.git
+(base) nitindubey@nitins-MacBook-Air BookStore % git branch
+* main
+(base) nitindubey@nitins-MacBook-Air BookStore % git push -u origin main
+
+Enumerating objects: 43, done.
+Counting objects: 100% (43/43), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (40/40), done.
+error: RPC failed; HTTP 408 curl 22 The requested URL returned error: 408
+send-pack: unexpected disconnect while reading sideband packet
+Writing objects: 100% (43/43), 7.47 MiB | 217.00 KiB/s, done.
+Total 43 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
+(base) nitindubey@nitins-MacBook-Air BookStore % git config --global http.postBuffer 524288000
+
+(base) nitindubey@nitins-MacBook-Air BookStore % git config --global http.postBuffer 524288000
+
+(base) nitindubey@nitins-MacBook-Air BookStore % git push -u origin main
+
+Enumerating objects: 43, done.
+Counting objects: 100% (43/43), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (40/40), done.
+Writing objects: 100% (43/43), 7.47 MiB | 23.31 MiB/s, done.
+Total 43 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/NitinDubey7620/LegacyBooksApp.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+(base) nitindubey@nitins-MacBook-Air BookStore % 
+
+(in between process after we init a git repo and add all the changes of folder and also notes of commit )
+git commit -m "Frontend Done!!" -> “Jo changes ready hai, unka snapshot bana do with message.”
+after this ------------> 
+// got to GitHub
+// create a repository 
+// and keep it public and copy url and paste like below code 
+// in this repo in main branch we will push all our code
+// in temrinal if u see something error its the , its typo or there is change is cmd of git
+
+BookStore % git remote add origin https://github.com/NitinDubey7620/LegacyBooksApp.git
+(base) nitindubey@nitins-MacBook-Air BookStore % git branch
+
+Bilkul! Neeche **Git commands** ko **Hinglish + simple words + examples** mein explain kiya hai—aisa ki aap easily notes bana sako.
+
+---
+
+# ⭐ **GIT Important Commands — Hinglish Notes (Simple & Clear)**
+
+---
+
+## **1️⃣ `git init` — Git shuru karna**
+
+```
+git init
+```
+
+✔️ Matlab:
+“Is folder ko Git project bana do.”
+
+**Example:**
+Aapke paas `BookStore` folder hai → usme jaake `git init` karoge → ab Git us folder ke saare changes track karega.
+
+---
+
+## **2️⃣ `git add .` — Saare files ko ready karna**
+
+```
+git add .
+```
+
+✔️ Matlab:
+“Jo bhi files hai, sabko upload ke liye ready kar do.”
+
+**Simple example:**
+Aapne `Navbar.jsx` aur `App.jsx` me changes kiye → `git add .` karoge → dono ready ho jayenge commit ke liye.
+
+---
+
+## **3️⃣ `git commit -m "message"` — Snapshot save karna**
+
+```
+git commit -m "first commit"
+```
+
+✔️ Matlab:
+“Jo changes ready hai, unka snapshot bana do with message.”
+
+**Example:**
+`git commit -m "Navbar UI updated"`,
+matlab aapne Navbar me change kiya aur Git ko bola:
+“Maine ye kaam kiya, note kar lo.”
+
+---
+
+## **4️⃣ `git remote add origin URL` — Local ko GitHub se jodna**
+
+```
+git remote add origin https://github.com/user/repo.git
+```
+
+✔️ Matlab:
+“Is project ko iss GitHub link se connect kar do.”
+
+**Example:**
+GitHub pe `LegacyBooksApp` repo banaya →
+Uska link copy karke ye command run kar di.
+
+---
+
+## **5️⃣ `git push -u origin main` — Code GitHub pe upload karna**
+
+```
+git push -u origin main
+```
+
+✔️ Matlab:
+“Mera code GitHub ke main branch pe bhej do.”
+
+**Example:**
+Aapka frontend ready tha → ye command chalayi →
+poora frontend GitHub pe upload ho gaya.
+
+---
+
+# ⭐ **Daily Workflow (Har baar repeat karne wale commands)**
+
+Aap code change karte ho → phir ye 3 commands:
+
+```
+git add .
+git commit -m "message"
+git push
+```
+
+✔️ Bas itna hi!
+Ye daily ka routine hai.
+
+---
+
+# ⭐ **Basic Concepts (Super Simple Explanation)**
+
+### **🔹 `main` kya hota hai?**
+
+`main` = main branch
+Jaha aapka main code hota hai.
+
+Pehle `master` hota tha, ab GitHub default `main` use karta hai.
+
+---
+
+### **🔹 `origin` kya hota hai?**
+
+`origin` = GitHub ka naam
+Jo link aapne remote add se connect kiya hai.
+
+---
+
+# ⭐ Quick Notes (1-minute Revision)
+
+* `git init` → project start
+* `git add .` → sab files ready
+* `git commit -m "msg"` → changes save
+* `git remote add origin URL` → GitHub se connect
+* `git push -u origin main` → pehli baar upload
+* `git push` → next time upload
+
+---
+
+Agar chaho to main isko **PDF format** me beautiful notes ki tarah bana kar bhi de sakta hoon.
+
+
+//our project is complete we can do last work is to push all code to github 
+//new terminal on root directory 
+//we will check whether a repo is assign to a project or not ->git remote -v
+->origin  https://github.com/NitinDubey7620/LegacyBooksApp.git (fetch)
+origin  https://github.com/NitinDubey7620/LegacyBooksApp.git (push)
+// we had pushed our front end so this repo is assign for our project 
+// u can go on github and check directory u can see the or repo and frontend it 
+//now we will push the backend ->git add .
+//to push -> we will use -> git add .
+// after adding all the backedn -> git commit -m "Backend Done"

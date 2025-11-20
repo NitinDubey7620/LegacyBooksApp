@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
+import AuthProvider from './context/AuthProvider.jsx'
 
 /*
 <React.StrictMode>
@@ -40,9 +41,14 @@ import { BrowserRouter } from 'react-router-dom'
 */
 createRoot(document.getElementById('root')).render(
 <BrowserRouter>
+<AuthProvider>
 <div>
+ {/* our context api ready we want our user to be accessed globally everwhere 
+  we have to wrap our context in main.jsx
+we will keep our app in main.jsx inside the AuthProvider , that we have created , it wil get imported */}
   <App></App>
 </div>
+</AuthProvider>
 </BrowserRouter>
   
 );

@@ -1,7 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import Login from './Login';
-
+import { useAuth } from '../context/AuthProvider';
+import Logout from './Logout';
 function Navbar() {
+  //to check our context api after importing it in main.jsx 
+  //[authUser,setAuthUser] -> this will come from , i.e ,->import { useAuth } from '../context/AuthProvider';
+  /*
+  const [authUser,setAuthUser] =useAuth();
+    //we will console and check what we are getting in auth user 
+    console.log(authUser);
+*/ // we willsue this app.jsx 
+const [authUser,setAuthUser] =useAuth();
+// we are getting logged in user 
+//now we casn protect the course route 
+
   const[theme,setTheme]=useState(localStorage.getItem("theme")?localStorage.getItem("theme"):"light")
   const element=document.documentElement;
   useEffect(() => {
@@ -157,7 +169,9 @@ to fix nav bar and amke it sticky to move along eith pages or remain its make in
       d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
   </svg>
 </label>
-                            <div className="">
+{
+  //if user is login then show logout else show login , we implemented this at end after building the logout button afetr the creating context api for authuser -> which is logged in
+  authUser?(<Logout></Logout> ):(<div className="">
                                 {/*we remove the "navbar from here so we can merger the menu and login button 
                                 so className="navbar-end" = className="" 
                                 we will make chnages to bt -> bg black ,text white, rounded medium and hover - bg
@@ -174,6 +188,8 @@ to fix nav bar and amke it sticky to move along eith pages or remain its make in
                               <Login>
                                 </Login>{/* we will import login here to use it  */}
                             </div>
+)}
+                            
                     </div>
             </div>
             </div>

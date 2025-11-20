@@ -1,8 +1,52 @@
-import React from 'react'
-import list from "../../public/list.json"
+import React, { useState,useEffect } from 'react'
+// import list from "../../public/list.json" 
+// we getting our data from here , now we don't need it as we have made a backend and connect with the database 
+//after creating the schema, for the databse and after connection we have imported the data
+
+//we call our api in frontend -> to communicate with api in frontend we use javascript library [ axois] 
+//we used it to send and recieve http request
+// install axios it in front end -> npm i axios
+// after it has got installed , we call our backend api 
+//for that we define state first 
 import Cards from './Cards'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 function Course() {
+  //backend -> api call from frontend to our api we created at backend -> to get request -> to get the data->book
+  //a variable and fucntion set book  , it will come from usestate (will get imported)
+  // in starting it will be empty array if there is no data
+  //we will use -> useEffect , now we will call our api for the data
+  // we will pass empty array in useEffect so it runs only one time 
+  // we will make fucntion and it will be a sync function as we are requesting from the backend funtion
+  //we will use try catch block
+  // we call our api -> import axois 
+  // axois.get(api's url , i.e endpoint ) ( request because the api that we have made is get request)
+  // our url -> go on postman and copy url for which we used for checking our api ->http://localhost:4001/book
+  // we will use await , async - await -> is a async func that , we we get request and its taking time so it wil hold
+  // until the repsonse comes (wait) and if response comes we will res success response else show  -> error 
+  //store in res variable 
+  // we see our data , response.data
+  // we will also change our state keep our data in ,setBook(res.data)
+  // we don't need list.json -> now our data is in book-> we are getting using the function 
+  //we need to map with book instead of list
+  // we will run this and check whether data is coming or not 
+  //on course route , http://localhost:5173/course
+  const [book,setBook]=useState([])
+    useEffect(()=>{
+      const getBook = async()=>{
+        try {
+          // we will call our api 
+          const res = await axios.get("http://localhost:4001/book");
+          console.log(res.data);
+          setBook(res.data); // it will come from setbook to our variable -> book and we can use the variable 
+          //im our mapping 
+        } catch (error) {
+          //if there is error we throe the error in the console
+          console.log(error);
+        }// our api call is ready so noww we will call our function here 
+      }
+      getBook(); // calling our function here
+    },[])
   return (
     <>
     <div className='max-w-screen-2xl mx-auto px-4 md:px-8'>
@@ -17,8 +61,10 @@ function Course() {
       </div>
       <div className='mt-12 grid grid-cols-1 md:grid-cols-4'>
         {
-         list.map((item)=>
-        <Cards key={item.id} item={item}></Cards>)
+  //we need to map with book instead of list
+        //  list.map((item)=>
+          book.map((item)=>
+        <Cards key={item._id} item={item}></Cards>)
         }
       </div>
       </div>
