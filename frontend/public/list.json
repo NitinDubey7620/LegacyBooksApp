@@ -1,98 +1,162 @@
 [
-    {
-        "id":1,
-        "name":"Story Book",
-        "title":"Discover a smarter way to learn — anytime, anywhere.",
-        "price": 0,
-        "category":"900",
-        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
-    },
-    {
-        "id":2,
-        "name":"Life",
-        "title":"The Legacy Within — Your Journey Begins Here",
-        "price": 0,
-        "category":"Free",
-        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
-    },
-    {
-        "id":3,
-        "name":"Mind Peace",
-        "title":"Stories That Shape Souls and Build Legacies",
-        "price": 0,
-        "category":"500",
-        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
-    },
-    {
-        "id":4,
-        "name":"Friendship",
-        "title":"From Pages to Purpose — Discover, Learn, and Evolve.",
-        "price": 0,
-        "category":"700",
-        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
-    },
-    {
-        "id":5,
-        "name":"World",
-        "title":"A World of Books, A Lifetime of Legacy.",
-        "price": 0,
-        "category":"Free",
-        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
-    },
-    {
-        "id":6,
-        "name":"Story Book",
-        "title":"Dream. Read. Discover — The LegacyBooks Way",
-        "price": 0,
-        "category":"800",
-        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
-    },
-    {
-        "id":7,
-        "name":"Story Book",
-        "title":"Beyond Words — Creating Legacies Through Knowledge",
-        "price": 0,
-        "category":"900",
-        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
-    },
-    {
-        "id":8,
-        "name":"Universe Story",
-        "title":"Every Book Holds a Universe — Find Yours.",
-        "price": 0,
-        "category":"Free",
-        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
-    },
-    {
-        "id":9,
-        "name":"ShortStory",
-        "title":"Timeless Tales, Endless Learning.",
-        "price": 0,
-        "category":"Free",
-        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
-    },
-    {
-        "id":10,
-        "name":"novels",
-        "title":"LegacyBooks — Where Great Stories Never End",
-        "price": 0,
-        "category":"200",
-        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
-    },
-    {
-        "id":11,
-        "name":"novels",
-        "title":"Great Stories Never End",
-        "price": 0,
-        "category":"790",
-        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
-    },
-    {
-        "id":12,
-        "name":"AutoBiography",
-        "title":"Great Stories ",
-        "price": 500,
-        "category":"history",
-        "image":"https://www.freepik.com/free-vector/gradient-stack-books-illustration_23974764.htm#fromView=search&page=4&position=15&uuid=989667fe-f5f5-4bc7-9810-f7d9cf66790e&query=book"
-    }
+  {
+    "id": 1,
+    "name": "Story Book",
+    "title": "Discover a smarter way to learn — anytime, anywhere.",
+    "price": 0,
+    "category": "Free",
+    "image": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+  },
+  {
+    "id": 2,
+    "name": "The Creative Mind",
+    "title": "Unlock ideas and boost your imagination with this beginner-friendly guide.",
+    "price": 199,
+    "category": "Paid",
+    "image": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+  },
+  {
+    "id": 3,
+    "name": "Learning Made Simple",
+    "title": "Master essential concepts with structured lessons and easy explanations.",
+    "price": 0,
+    "category": "Free",
+    "image": "https://images.unsplash.com/photo-1519682337058-a94d519337bc"
+  },
+  {
+    "id": 4,
+    "name": "Mastering Technology",
+    "title": "A modern guide to future-ready tech skills for learners at any level.",
+    "price": 299,
+    "category": "Paid",
+    "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93"
+  },
+  {
+    "id": 5,
+    "name": "Beginner’s Guide to Success",
+    "title": "Start your journey with confidence and practical daily learning habits.",
+    "price": 0,
+    "category": "Free",
+    "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+  },
+  {
+    "id": 6,
+    "name": "Advanced Analytics",
+    "title": "Dive deep into data, patterns, and insights with this expert handbook.",
+    "price": 349,
+    "category": "Paid",
+    "image": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570"
+  },
+  {
+    "id": 7,
+    "name": "Creative Writing Essentials",
+    "title": "Bring your stories to life — tips, techniques and inspiration for writers.",
+    "price": 0,
+    "category": "Free",
+    "image": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+  },
+  {
+    "id": 8,
+    "name": "Digital Marketing Basics",
+    "title": "Understand the digital world: social, SEO, content & more.",
+    "price": 249,
+    "category": "Paid",
+    "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0ea"
+  },
+  {
+    "id": 9,
+    "name": "Personal Finance 101",
+    "title": "Simple steps to manage money, save smart and build wealth.",
+    "price": 0,
+    "category": "Free",
+    "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e"
+  },
+  {
+    "id": 10,
+    "name": "Graphic Design Fundamentals",
+    "title": "Learn design principles, tools and workflows from scratch.",
+    "price": 299,
+    "category": "Paid",
+    "image": "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d"
+  },
+  {
+    "id": 11,
+    "name": "Mindfulness & Well-being",
+    "title": "Cultivate balance, clarity and purpose through mindful practice.",
+    "price": 0,
+    "category": "Free",
+    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+  },
+  {
+    "id": 12,
+    "name": "Project Management Mastery",
+    "title": "Tools, techniques and strategies for successful projects.",
+    "price": 399,
+    "category": "Paid",
+    "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+  },
+  {
+    "id": 13,
+    "name": "Modern Web Development",
+    "title": "Build responsive, fast and modern web apps using current tech.",
+    "price": 0,
+    "category": "Free",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+  },
+  {
+    "id": 14,
+    "name": "Entrepreneurship Playbook",
+    "title": "From idea to execution — a practical guide to starting your business.",
+    "price": 449,
+    "category": "Paid",
+    "image": "https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+  },
+  {
+    "id": 15,
+    "name": "Photography Essentials",
+    "title": "Master your camera, composition and storytelling.",
+    "price": 0,
+    "category": "Free",
+    "image": "https://images.unsplash.com/photo-1499084732479-de2c02d45fc4"
+  },
+  {
+    "id": 16,
+    "name": "Public Speaking Confidence",
+    "title": "Speak with clarity, persuasion and impact in any situation.",
+    "price": 249,
+    "category": "Paid",
+    "image": "https://images.unsplash.com/photo-1515162305284-9cd1f89cb0d2"
+  },
+  {
+    "id": 17,
+    "name": "Advanced Python Programming",
+    "title": "Deep dive into Python, frameworks and real-world applications.",
+    "price": 0,
+    "category": "Free",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+  },
+  {
+    "id": 18,
+    "name": "UX / UI Design Unleashed",
+    "title": "Create user-friendly, beautiful interfaces.",
+    "price": 399,
+    "category": "Paid",
+    "image": "https://images.unsplash.com/photo-1532619187607-3f36d1100aab"
+  },
+  {
+    "id": 19,
+    "name": "Blockchain & Crypto Basics",
+    "title": "Get a clear understanding of blockchain, crypto and what’s next.",
+    "price": 0,
+    "category": "Free",
+    "image": "https://images.unsplash.com/photo-1518544801958-efcbf8a7ec10"
+  },
+  {
+    "id": 20,
+    "name": "Artificial Intelligence Essentials",
+    "title": "Explore AI concepts, models and applications for everyone.",
+    "price": 499,
+    "category": "Paid",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475"
+  }
 ]

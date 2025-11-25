@@ -97,7 +97,7 @@ in network ->for that request ->{"message":"User alreay exists"}
    <>
    <div className='flex h-screen items-center justify-center'>
   <div className='w-[600px] border-gray-300 rounded-xl shadow-2xl p-5  '>
-  <div className="relative p-6 rounded-xl bg-white">
+  <div className="relative p-6 rounded-xl bg-whitedark-text-white">
       {/* if there is a button in form, it will close the modal */}
       <form onSubmit={handleSubmit(onSubmit)}>
       <Link to='/' className="btn btn-sm btn-circle btn-ghost absolute right-4 top-2">

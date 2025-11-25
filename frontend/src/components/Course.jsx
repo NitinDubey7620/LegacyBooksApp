@@ -49,8 +49,13 @@ function Course() {
     },[])
   return (
     <>
-    <div className='max-w-screen-2xl mx-auto px-4 md:px-8'>
-      <div className='mt-28 items-center justify-center text-center'>
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 mt-20
+        w-full bg-cover bg-center
+        bg-[url('/heroimage-white.jpg')]
+        dark:bg-[url('/heroimage-dark.jpg')]
+      ">
+    <div className='max-w-screen-2xl mx-auto px-4 md:px-28 pt-25'>
+      <div className='items-center justify-center text-center'>
         <h1 className='text-2xl font-semibold md-text-4xl'><span className='text-blue-500'>Learn</span>, grow, and <span className='text-pink-500'>master </span> new skills with our <span className='text-violet-600'>curated</span> selection of courses<span className='text-green-500' >{" :)"}
 </span>
 </h1>
@@ -66,6 +71,7 @@ function Course() {
           book.map((item)=>
         <Cards key={item._id} item={item}></Cards>)
         }
+      </div>
       </div>
       </div>
       </>

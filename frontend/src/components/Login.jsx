@@ -120,7 +120,7 @@ function Login() {
                 onClick={() => document.getElementById("my_modal_3").close()}>
                 X
               </Link>
-              <h3 className="font-bold text-lg">Login</h3>
+              <h3 className="font-bold text-lg dark-text-white">Login</h3>
               {/* onSubmit={handleSubmit(onSubmit)}> */}
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mt-4">

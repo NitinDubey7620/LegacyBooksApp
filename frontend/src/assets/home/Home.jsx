@@ -8,9 +8,17 @@ import Freebook from '../../components/Freebook'
 function Home() {
   return (
     <>
-  <Navbar></Navbar>
+    <Navbar></Navbar>
+    <div className="
+        min-h-screen w-full bg-cover bg-center
+        bg-[url('/heroimage-light.jpg')]
+        dark:bg-[url('/heroimage-dark.jpg')]
+      " >
+  <div className="pt-[80px]">
   <Banner></Banner>
   <Freebook></Freebook>
+ </div>
+ </div>
  <Footer></Footer>
     </>
   )

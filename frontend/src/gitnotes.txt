@@ -285,3 +285,8 @@ origin  https://github.com/NitinDubey7620/LegacyBooksApp.git (push)
 //now we will push the backend ->git add .
 //to push -> we will use -> git add .
 // after adding all the backedn -> git commit -m "Backend Done"
+
+//make sure your .env file isnot visible in backend so 
+// backend/ .env , in git ingnore in node_module
+//we have push in this way so it doesn't goes in the backend , it will be ignored and will not rich git
+//we have successfully pushed our backend on the git u can go and check 

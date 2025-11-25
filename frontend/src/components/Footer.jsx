@@ -3,11 +3,11 @@ import React from 'react'
 function Footer() {
   return (
     <div>
-      <hr></hr>
-      <footer className="footer footer-horizontal footer-center text-base-content rounded p-10">
-  <nav className="grid grid-flow-col gap-4">
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
+      <hr className=" border-amber-500 dark:border-amber-500"></hr>
+      <footer className="footer footer-horizontal footer-center text-base-content rounded p-10 bg-slate-900 text-white">
+  <nav className="grid grid-flow-col gap-4 ">
+    <a className="link link-hover"href='/AboutUs'>AboutUs</a>
+    <a className="link link-hover"href='/Contact'>Contact</a>
     <a className="link link-hover">Jobs</a>
     <a className="link link-hover">Press kit</a>
   </nav>
@@ -49,7 +49,7 @@ function Footer() {
     </div>
   </nav>
   <aside>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+    <p>Copyright © {new Date().getFullYear()} - LegacyBooks • All rights reserved • Made by Nitin Dubey.</p>
   </aside>
 </footer></div>
   )

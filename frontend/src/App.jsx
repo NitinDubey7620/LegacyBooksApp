@@ -8,8 +8,10 @@ import Home from './assets/home/Home';
 import { Routes, Route, Navigate } from "react-router-dom"
 import Courses from './courses/Courses.jsx';
 import Signup from './components/Signup';
+import AboutUs from './components/AboutUs';
 import toast, { Toaster } from 'react-hot-toast';
 import { useAuth } from './context/AuthProvider';
+import Contact from './components/Contact';
 //after this we will keep our home and all other component in the different route
 /*
 import Navbar from './components/Navbar';
@@ -51,6 +53,8 @@ function App() {
  {/*if there is authuser show this course component else naviagte to signup page 
     navigate is in our react router dom ->we use this navigate to differernt route */}
     <Route path='/signup' element={<Signup></Signup>}/>
+    <Route path='/AboutUs' element={<AboutUs></AboutUs>}/>
+    <Route path='/Contact' element={<Contact></Contact>}/>
   </Routes>
   <Toaster></Toaster>
   </div>

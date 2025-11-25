@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Login from './Login';
 import { useAuth } from '../context/AuthProvider';
 import Logout from './Logout';
+import { Link, useNavigate } from 'react-router-dom';
+import  logo from '../../public/logo-full.png'
 function Navbar() {
   //to check our context api after importing it in main.jsx 
   //[authUser,setAuthUser] -> this will come from , i.e ,->import { useAuth } from '../context/AuthProvider';
@@ -57,6 +59,7 @@ const [authUser,setAuthUser] =useAuth();
       window.removeEventListener('scroll',handleScroll)
     }
   },[])
+
   // we also need to bind the navbar items to our main jsx where we have route this all 
   // when its clicked over here like on course u will be redirected to the course page from the navbar
   //<li><a>Home</a></li> -> <li><a href="./">Home</a></li> for all pages
@@ -67,8 +70,8 @@ const [authUser,setAuthUser] =useAuth();
     const navItems = (<>
         <li><a href='./'>Home</a></li> 
         <li><a href='./course'>Course</a></li> 
-        <li><a>Contact</a></li>
-        <li><a>AboutUs</a></li>
+        <li><a href='./Contact'>Contact</a></li>
+        <li><a href='./aboutUs'>AboutUs</a></li>
     </>)
     return (
         // <div>Navbar</div>
@@ -83,8 +86,8 @@ px-4 md:px-8 → gives you responsive side padding (smaller on phones, larger on
 DaisyUI’s .navbar, .dropdown, .menu, etc. handle the rest of the responsiveness for your nav links and buttons
 to fix nav bar and amke it sticky to move along eith pages or remain its make in navbar main div -> fixed top-0 right-0 left-0.
 */}
-                <div className={`w-full py-2 fixed top-0 right-0 left-0  z-50  dark:bg-slate-900 dark-text-white${
-                  sticky?"sticky-navbar shadow-md bg-base-200 duration-200 transition-all   dark:bg-slate-600 dark-text-white ease-in-out":""
+                <div className={`w-full py-2 fixed top-0 right-0 left-0  z-50  blue:bg-slate-900 dark-text-white${
+                  sticky?"sticky-navbar shadow-md bg-blue-200 duration-200 transition-all  dark:bg-blue-900 dark-text-white ease-in-out":""
                 }`}>
                      <div className='max-w-screen-2xl mx-auto px-4 md:px-8 '>
                       <div className="navbar">
@@ -102,7 +105,18 @@ to fix nav bar and amke it sticky to move along eith pages or remain its make in
                                 {navItems}
                             </ul>
                         </div>
-                        <a className="text-2xl font-bold cursor-pointer ">LegacyBooks</a>
+                        <Link to="/" className="flex items-center gap-2 md:gap-3 cursor-pointer select-none">
+  <img
+    src={logo}
+    alt="LegacyBooks Logo"
+    className="w-10 h-10 md:w-12 md:h-12 object-contain bg-white rounded-xl shadow-sm"
+  />
+
+  <span className="p-1 text-xl md:text-2xl font-bold whitespace-nowrap">
+    LegacyBooks
+  </span>
+</Link>
+
                     </div>
                     <div className="navbar-end flex flex-wrap justify-end items-center gap-3">
                             <div className="navbar-center hidden lg:flex">

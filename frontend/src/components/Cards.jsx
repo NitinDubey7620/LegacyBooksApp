@@ -19,12 +19,14 @@ function Cards({item}) { // we will recive the book after map fucntion  as item 
     <div className='mt-4 my-4 p-3 flex justify-center items-center'>
   <div className="card bg-base-100 w-120 shadow-lg rounded-lg hover:scale-105 duration-200
   flex flex-col justify-between h-[380px]">
-  <figure>
-    <img src={image}
+  <figure className="w-full h-[300px] flex justify-center items-center bg-white">
+    <img src={item.image}
       // src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
     // for iamge we will use item.image name in src
-      alt="Shoes" />
-  </figure>
+      alt="book"
+      className="w-auto h-auto  object-contain" 
+      />
+  </figure >
   <div className="card-body">
     <h2 className="card-title">
       {item.name}
