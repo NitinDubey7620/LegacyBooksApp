@@ -6,7 +6,7 @@ import React from 'react';
 //as we have route all the pages so import the route after installing it
 import Home from './assets/home/Home';
 import { Routes, Route, Navigate } from "react-router-dom"
-import Courses from './courses/courses';
+import Courses from './courses/Courses.jsx';
 import Signup from './components/Signup';
 import toast, { Toaster } from 'react-hot-toast';
 import { useAuth } from './context/AuthProvider';
