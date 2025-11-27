@@ -11,6 +11,10 @@ import React, { useState,useEffect } from 'react'
 import Cards from './Cards'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import.meta.env.VITE_BACKEND_URL
+
+//as we have connected the frontend with the backend so we will replace the 
+// the backed api url , axios.get(`${import.meta.env.VITE_BACKEND_URL}/book`)
 function Course() {
   //backend -> api call from frontend to our api we created at backend -> to get request -> to get the data->book
   //a variable and fucntion set book  , it will come from usestate (will get imported)
@@ -36,7 +40,8 @@ function Course() {
       const getBook = async()=>{
         try {
           // we will call our api 
-          const res = await axios.get("http://localhost:4001/book");
+          // const res = await axios.get("http://localhost:4001/book");
+          axios.get(`${import.meta.env.VITE_BACKEND_URL}/book`)
           console.log(res.data);
           setBook(res.data); // it will come from setbook to our variable -> book and we can use the variable 
           //im our mapping 

@@ -57,8 +57,22 @@ import bookRoute from "./route/book.route.js";
 //we will import user router from this router in index.js ( for signup ) which runs fucntion define it its controller
 import userRoute from "./route/user.route.js";
 
+//as we have connected backend with frontend for cors we will give frotend url so it can allow to call our backend render 
+// app.use(cors({
+//   origin: "https://legacy-books-app.vercel.app",
+//   methods: "GET,POST,PUT,DELETE",
+//   credentials: true
+// }));
 
-app.use(cors()); // use this cors after the express intilization 
+//we have temporarily used to this to avoid the cors error 
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"]
+}));
+
+
+// 
+// use this cors after the express intilization 
 // port info is sensitive so we will make .env file . where it contains ,  Port = 4001 
 // way to use it , THIS WILL RUN ON PORT 4001 BUT IF THIS PORT IS NOT AVIALBLE THAN THEY WILL THEN SERVE SERVER
 // ON THIS || PORT , BYDEFAULT - 4000 (OUR APP WILL RUN ON )
@@ -130,6 +144,7 @@ const URI = process.env.MongoDBURI;
 //npm i mongoose ,  "mongoose": "^8.20.0",
 // in this moongse there is connect method using which we will connect
 //import it 
+/*
 try{
     // we don't need this parameter if we are using cloud -> mongo db atlas 
     //as we are using db locally using monogdb compass , we need poarameter due to dependencies
@@ -144,6 +159,26 @@ try{
 catch(error){
     console.log("Error",error);
 }
+    */ // this was forthe local mongo db compass connection 
+
+//now for the cloud mongo db atlas connection method with the connction string]
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(URI, {
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true,
+      //these are depreciated so no need to write it 
+    });
+    console.log("✅ Connected to MongoDB Atlas");
+  } catch (error) {
+    console.log("❌ MongoDB Atlas connection error:", error);
+    process.exit(1); // Exit server if DB fails
+  }
+};
+
+connectDB();
+// after succesfull connection ✅ Connected to MongoDB Atlas
 // save this and start the server -> npm start
 //Connected to mongoDB , sucessfully connected to the mongodb->  also our ->sever is running
 //Server app listening on port 4001

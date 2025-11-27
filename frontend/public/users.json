@@ -1,0 +1,117 @@
+[{
+  "_id": {
+    "$oid": "691d6ca525433bfff422e3f1"
+  },
+  "fullname": "Nitin",
+  "email": "nitin@example.com",
+  "password": "123456",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691d7469613e9dbd83951818"
+  },
+  "fullname": "sachin",
+  "email": "sachin @example.com",
+  "password": "$2b$10$8NDAnZMYjTV3qrhf/xw41OLT5uryTBqEC/oAn21qvb5ljRvofIuxS",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691da7fb7598a8b24b2c4db7"
+  },
+  "fullname": "Nititn Dubey",
+  "email": "tangentgamer07@gmail.com",
+  "password": "$2b$10$SmZ8JSw7tAnzhyIMoClaS.qA8FD0tntWLBYYUIgMS1B2.W5xmx/qG",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691dabd4d70473ff5a37c153"
+  },
+  "fullname": "Nitin",
+  "email": "nitindubey04970@gmail.com",
+  "password": "$2b$10$8bq78UUwTPaz5iqD6Ak/uOpC1/Z46yy4wWIzDCC9GNpuGYrrI.vOC",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691db509b6af905945f09b11"
+  },
+  "fullname": "Rahul ",
+  "email": "rahul12137@gmail.com",
+  "password": "$2b$10$WeXPkJ60wQCfQvA00YQ9YOGN3pGcQ2TaP3oovUrZsd0aqBo.aYy8a",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691db643b6af905945f09b15"
+  },
+  "fullname": "Shree",
+  "email": "Shree@gmail.com",
+  "password": "$2b$10$eGihZy.BYji1yacdDjCRC.ntIDdj4u7S0xaRmbnPcGYEDJ9bSlGTy",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691db6d2b6af905945f09b18"
+  },
+  "fullname": "harry",
+  "email": "harry@gmail.com",
+  "password": "$2b$10$qTuylPpgLlXP79nM8PE8KOpeW4KiBxUYZbuMv9Pm43JzmJy/bAQ9G",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691e1252b6af905945f09b2b"
+  },
+  "fullname": "Harish",
+  "email": "harish1234@gmail.com",
+  "password": "$2b$10$MEYgf.DJtZhr895F4dunKetDAr0KL1j8ZBMTDdR1X1FMjonHlQCmC",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691e1a6f9fb5a87a4f604dcc"
+  },
+  "fullname": "krishna",
+  "email": "krish1234@gmail.com",
+  "password": "$2b$10$rA2Wp6BnDXzvv2AKANDxaOgAC2FKr1.rtcKvDVu1VHNqmJZTCIN4y",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691ed0789fb5a87a4f604e2d"
+  },
+  "fullname": "test ",
+  "email": "tets@gmail.com",
+  "password": "$2b$10$4J9obfO90UjhfYMUTSBeRe6WxdwJeXZkflTYiUAq7QAu6e.BhEou6",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691f39856f791cd30599cc7a"
+  },
+  "fullname": "sdfgh",
+  "email": "vbn@gamai.com",
+  "password": "$2b$10$RtB48SBuhhkt8h4/ytcmCuvXs7mGKfgeCrVDgqdkVQXMOfnikQjEC",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "692310dc3f11f9ba6e2d30d8"
+  },
+  "fullname": "Saurav",
+  "email": "sarauv123@gmail",
+  "password": "$2b$10$5HOiA76DEKrR/O/5WlR/O.LzFIBsCWOGF2CcBLcJ7ZNjGE.iVKYlm",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "692542ee03b6a0b0e2d1b006"
+  },
+  "fullname": "Rahul Naik",
+  "email": "rahul12123@gmail.com",
+  "password": "$2b$10$subDWjTyMkiLtU5oUfEf9OIsR/RjH8O5L68d0DHUXlKkzB/YtlMoa",
+  "__v": 0
+}]

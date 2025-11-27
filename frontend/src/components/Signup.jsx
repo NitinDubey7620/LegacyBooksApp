@@ -4,6 +4,14 @@ import Login from './Login'
 import { useForm } from "react-hook-form"
 import axios from "axios";
 import toast, { Toaster } from 'react-hot-toast';
+import.meta.env.VITE_BACKEND_URL
+// for backend url 
+  //as we have connected the frontend with the backend so we will replace the , backend api url with
+// await axios
+//   .post(`${import.meta.env.VITE_BACKEND_URL}/users/signup`, userInfo)
+
+
+
  // as we have built the login form now we habe signup on clicking which the route changes so make signup.jsx
 // as login is on same page so we don't define route but for signup as the page changes we have too define the route
   // we will use same modal use in login in signuo to save our time 
@@ -48,7 +56,9 @@ function Signup() {
       //we need to give endpoint -> url 
       //at his url we want to store the userInfo 
       //and we we will use then and catch , in then we get response with arrow function
-      await axios.post("http://localhost:4001/users/signup",userInfo)
+      // await axios.post("http://localhost:4001/users/signup",userInfo)
+      await axios
+  .post(`${import.meta.env.VITE_BACKEND_URL}/users/signup`, userInfo)
       .then((res)=>{
         // we will console log the response we are getting
         console.log(res.data);

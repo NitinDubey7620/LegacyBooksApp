@@ -1261,3 +1261,31 @@ origin  https://github.com/NitinDubey7620/LegacyBooksApp.git (push)
 //now we will push the backend ->git add .
 //to push -> we will use -> git add .
 // after adding all the backedn -> git commit -m "Backend Done"
+
+ as we have shifted our local mongo db compass to online cloud, mongo db atlas , now we have to store the 
+#new connectionstring and also connect in the index.js accordingly
+# MongoDBURI=mongodb+srv://nitindubey04970_db_user:W5tuc3R89GBMTq6i@legacybooksstore.zuhe5qw.mongodb.net/LegacyBooksStore?retryWrites=true&w=majority
+# PORT=4001 // we wil use this same port 
+
+//so we need to make connection for this is our index js 
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("✅ Connected to MongoDB Atlas");
+  } catch (error) {
+    console.log("❌ MongoDB Atlas connection error:", error);
+    process.exit(1); // Exit server if DB fails
+  }
+};
+
+connectDB();
+// after succesfull connection ✅ Connected to MongoDB Atlas
+
+//now our backend is deployed -> on render 
+/and our frotnend on vercel 
+// now to connect backend with frontend 
+// we need to connect the api to backend and also give acess to CORS to backend url 

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form"
 import axios from "axios";
 import toast, { Toaster } from 'react-hot-toast';
 import { useAuth } from "../context/AuthProvider";
+import.meta.env.VITE_BACKEND_URL
 function Login() {
   const [authUser, setAuthUser] = useAuth();
   //     // this daisy ui modal on click it gets open
@@ -57,6 +58,12 @@ function Login() {
   //     formState: { errors }, // to show reports
   //   } = useForm();
   //   const onSubmit= (data) => console.log(data);
+  //
+
+  //as we have connected the frontend with the backend so we will replace the , backend api url with
+  //await axios
+  //.post(`${import.meta.env.VITE_BACKEND_URL}/users/login`, userInfo)
+
   const {
     register,
     handleSubmit,
@@ -76,8 +83,10 @@ function Login() {
       email: data.email,
       password: data.password,
     };
+    // await axios
+    //   .post("http://localhost:4001/users/login", userInfo)
     await axios
-      .post("http://localhost:4001/users/login", userInfo)
+  .post(`${import.meta.env.VITE_BACKEND_URL}/users/login`, userInfo)
       .then((res) => {
         // we will console log the response we are getting
         console.log(res.data);

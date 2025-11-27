@@ -9,6 +9,8 @@ import Cards from './Cards';
 import axios from 'axios';
 import { useState, useEffect } from "react";
 import { data } from 'react-router-dom';
+import.meta.env.VITE_BACKEND_URL
+
 //we will use the same fucntion used in course just bit make adjustment for the filter data 
 {/*as this is freebook will be dipalayed on the home page and all the paid book will be dispalyed on the courses where we have to login
     without authentication we can't use it 
@@ -30,13 +32,19 @@ import list from "../../public/list.json" go into directory get , we filter free
 we filter list and pass local data  , filter fucntion is a array method works or list i.e a array gives data acording to the filter
 that is the conditon we have given and return that data to us 
 we need card to display this data */}
+
+// after connecting the frontend with backend we will get 
+//->const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/book`);
+         // const res = await axios.get("http://localhost:4001/book");
+//replace with the backend url so we can request as we have deployed it
 function Freebook() {
 const [book,setBook]=useState([])
     useEffect(()=>{
       const getBook = async()=>{
         try {
           // we will call our api 
-          const res = await axios.get("http://localhost:4001/book");
+          // const res = await axios.get("http://localhost:4001/book");
+          const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/book`);
           const data=res.data.filter((data)=>data.category==="Free")
           console.log(data);
           setBook(data); // it will come from setbook to our variable -> book and we can use the variable 
