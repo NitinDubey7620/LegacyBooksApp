@@ -66,8 +66,12 @@ import userRoute from "./route/user.route.js";
 
 //we have temporarily used to this to avoid the cors error 
 app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE"]
+  origin: [
+    "https://legacy-books-app.vercel.app",
+    "https://legacy-books-app-hoya.vercel.app"
+  ],
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
 }));
 
 
