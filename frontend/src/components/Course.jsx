@@ -53,16 +53,16 @@ function Course() {
   //   },[])
   
 const [book, setBook] = useState([]);
-  useEffect(() => {
+
+useEffect(() => {
   const getBook = async () => {
     try {
       const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/book`);
       
-      // Show only paid books
-      const paidBooks = res.data.filter((item) => item.price > 0);
-      
-      setBook(paidBooks);
-      console.log("Paid books:", paidBooks);
+      // Show ALL books (Free + Paid)
+      setBook(res.data);
+
+      console.log("All books:", res.data);
 
     } catch (error) {
       console.log(error);
@@ -71,6 +71,7 @@ const [book, setBook] = useState([]);
   
   getBook();
 }, []);
+
 
   return (
     <>
