@@ -34,23 +34,43 @@ function Course() {
   //we need to map with book instead of list
   // we will run this and check whether data is coming or not 
   //on course route , http://localhost:5173/course
-  const [book,setBook]=useState([])
-    useEffect(()=>{
-      const getBook = async()=>{
-        try {
-          // we will call our api 
-          // const res = await axios.get("http://localhost:4001/book");
-          axios.get(`${import.meta.env.VITE_BACKEND_URL}/book`)
-          console.log(res.data);
-          setBook(res.data); // it will come from setbook to our variable -> book and we can use the variable 
-          //im our mapping 
-        } catch (error) {
-          //if there is error we throe the error in the console
-          console.log(error);
-        }// our api call is ready so noww we will call our function here 
-      }
-      getBook(); // calling our function here
-    },[])
+  // const [book,setBook]=useState([])
+  //   useEffect(()=>{
+  //     const getBook = async()=>{
+  //       try {
+  //         // we will call our api 
+  //         // const res = await axios.get("http://localhost:4001/book");
+  //         axios.get(`${import.meta.env.VITE_BACKEND_URL}/book`)
+  //         console.log(res.data);
+  //         setBook(res.data); // it will come from setbook to our variable -> book and we can use the variable 
+  //         //im our mapping 
+  //       } catch (error) {
+  //         //if there is error we throe the error in the console
+  //         console.log(error);
+  //       }// our api call is ready so noww we will call our function here 
+  //     }
+  //     getBook(); // calling our function here
+  //   },[])
+
+  useEffect(() => {
+  const getBook = async () => {
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/book`);
+      
+      // Show only paid books
+      const paidBooks = res.data.filter((item) => item.price > 0);
+      
+      setBook(paidBooks);
+      console.log("Paid books:", paidBooks);
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+  getBook();
+}, []);
+
   return (
     <>
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 mt-20
