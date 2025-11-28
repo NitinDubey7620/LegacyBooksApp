@@ -51,7 +51,8 @@ function Course() {
   //     }
   //     getBook(); // calling our function here
   //   },[])
-
+  
+const [book, setBook] = useState([]);
   useEffect(() => {
   const getBook = async () => {
     try {
