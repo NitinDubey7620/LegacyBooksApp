@@ -90,47 +90,81 @@ const [book,setBook]=useState([])
  breakpoibt for each pixel sm, lg , md , xl , 2xldevices ,for less than we need to generate the width
     */
 // this is setting
+  // var settings = {
+  //   dots: true,
+  //   infinite: false,
+  //   speed: 500,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 3,
+  //   initialSlide: 0,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 3,
+  //         infinite: true,
+  //         dots: true
+  //       }
+  //     },
+  //     {
+  //       breakpoint: 600,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 2,
+  //         initialSlide: 2
+  //       }
+  //     },
+  //     {
+  //       breakpoint: 480,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1
+  //       }
+  //     }
+  //   ]
+  // };
   var settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    // Tailwind -> lg = 1024px
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
       }
-    ]
-  };
+    },
+    // Tailwind -> md = 768px
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      }
+    },
+    // Tailwind -> sm = 640px
+    {
+      breakpoint: 640,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    }
+  ]
+};
+
   // use the slider from this repsonsive slider, from the website and paste it into the jsx 
   //there is 4 cards in a slider we want only 3 cards to dispay on our page -refer to the setting slider breakpoint
   // we need to give margin from left right so simply ADD them into our main div to resize 
   // we make cards as a separate component for our slider so we can use in main and course page as well
 return (
     <>
-    <div className='max-w-screen-2xl mx-auto px-4 md:px-8 '>
+    <div className='max-w-screen-2xl mx-auto px-4 md:px-8 overflow-hidden '>
         <div>
             <h1 className='font-semibold text-xl pb-2 mb-4-'>Learn Without Limits — Start Your Free Journey Today</h1>
         <p>Begin your learning adventure with expert-led courses designed to inspire growth and creativity. From personal development to professional skills, LegacyBooks offers a collection of 100% free courses that empower you to learn, explore, and achieve more — anytime, anywhere.</p>

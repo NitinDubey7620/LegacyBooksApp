@@ -110,3 +110,19 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+/* React Slick Fixes */
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  padding: 5px;
+}
+
+.slick-slide > div {
+  margin: 10px;
+}
+
+.slick-list {
+  margin: 0 -5px;
+}

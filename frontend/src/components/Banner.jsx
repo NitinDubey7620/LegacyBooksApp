@@ -44,7 +44,7 @@ function QuotesFade() {
   return (
     <div className="w-full  py-2 mt-20">
       <p
-        className={`text-center text-4xl md:text-2xl font-stretch-ultra-expanded transition-opacity duration-700 ${
+        className={`text-center text-4xl md:text-2xl font-stretch-ultra-expanded transition-opacity duration-700 p-4 ${
           fade ? "opacity-100" : "opacity-0"
         }`}
       >
