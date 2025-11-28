@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form"
 import axios from "axios";
 import toast, { Toaster } from 'react-hot-toast';
 import { useAuth } from "../context/AuthProvider";
-import.meta.env.VITE_BACKEND_URL
 function Login() {
   const [authUser, setAuthUser] = useAuth();
   //     // this daisy ui modal on click it gets open

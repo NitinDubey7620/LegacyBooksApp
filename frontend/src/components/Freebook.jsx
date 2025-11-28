@@ -9,7 +9,6 @@ import Cards from './Cards';
 import axios from 'axios';
 import { useState, useEffect } from "react";
 import { data } from 'react-router-dom';
-import.meta.env.VITE_BACKEND_URL
 
 //we will use the same fucntion used in course just bit make adjustment for the filter data 
 {/*as this is freebook will be dipalayed on the home page and all the paid book will be dispalyed on the courses where we have to login

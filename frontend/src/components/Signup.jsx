@@ -4,7 +4,6 @@ import Login from './Login'
 import { useForm } from "react-hook-form"
 import axios from "axios";
 import toast, { Toaster } from 'react-hot-toast';
-import.meta.env.VITE_BACKEND_URL
 // for backend url 
   //as we have connected the frontend with the backend so we will replace the , backend api url with
 // await axios

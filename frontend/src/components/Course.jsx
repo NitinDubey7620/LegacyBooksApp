@@ -11,7 +11,6 @@ import React, { useState,useEffect } from 'react'
 import Cards from './Cards'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-import.meta.env.VITE_BACKEND_URL
 
 //as we have connected the frontend with the backend so we will replace the 
 // the backed api url , axios.get(`${import.meta.env.VITE_BACKEND_URL}/book`)
