@@ -1,4 +1,4 @@
-📚 LegacyBooksApp – Full-Stack Bookstore Web Application
+📚 LegacyBooksApp – Full-Stack Bookstore Web Application https://legacy-books-app.vercel.app/
 
 LegacyBooksApp is a complete full-stack MERN bookstore application where users can browse books, open any book to read its short content, and interact with a clean UI built with React, TailwindCSS, and DaisyUI. The backend is powered by Node.js, Express, and MongoDB using a structured MVC architecture.
 
